@@ -1,2 +1,38 @@
 <h1>Memories#new</h1>
 <p>Find me in app/views/memories/new.html.erb</p>
+
+<%= form_for @memory do |f| %>
+  <div>
+    <%= f.label "title" , "Title" %><br>
+    <%= f.text_field "title" %>
+  </div>
+  <div>
+    <%= f.label "description", "Description" %><br>
+    <%= f.text_field "description" %>
+  </div>
+  <div>
+    <%= f.label "category" %><br>
+    <%= f.text_field "category" %>
+  </div>
+  <div>
+    <%= f.label "latitude" %><br>
+    <%= f.text_field "latitude" %>
+  </div>
+  <div>
+    <%= f.label "longitude" %><br>
+    <%= f.text_field "longitude" %>
+  </div>
+  <div>
+    <%= f.label "city", "City" %><br>
+    <%= f.text_field "city" %>
+  </div>
+  <div>
+    <%= f.label "google_place_id" %><br>
+    <%= f.text_field "google_place_id" %>
+  </div>
+  <div>
+    <%= f.label "media_url" %><br>
+    <%= f.text_field "media_url" %>
+  </div>
+  <div><%= f.submit "Submit" %></div>
+  <% end %>
