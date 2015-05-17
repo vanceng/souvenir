@@ -22,4 +22,15 @@
   Memory.create!(traveller_id: 3,city: "Geneva",comment: "The Alps, what a view!", category: "view", photo_url: "/img/city/switzerland.jpg", latitude: 46.203105, longitude: 6.14308)
   Memory.create!(traveller_id: 3,city: "Geneva",comment: "This etching is such an amazing feat of engineering!", category: "landmark", photo_url: "/img/city/switzerland2.jpg", latitude: 46.2050295, longitude: 6.1440885)
 
-
+Memory.create!(traveller_id: 1, title: "Steamclock", description: "The Steamclock rings on the hour. An icon of Gastown.", category: "landmark", latitude: 49.284436, longitude: -123.108896, city: "Vancouver", google_place_id: , media_url: )
+Memory.create!(traveller_id: 1, title: "Coffee at Prado", description: "This Coffee was one of the best I ever had.", category: "food", latitude: 49.283915, longitude: -123.109554, city: "Vancouver", google_place_id: , media_url: )
+Memory.create!(traveller_id: 1, title: "Hiking at Lynn Canyon", description: "Walking in Lynn canyon felt like I was in a land forgotten by time.", category: "nature", latitude: 49.339074, longitude: -123.018063, city: "Vancouver", google_place_id: , media_url: )
+Memory.create!(traveller_id: 1, title: "Float Plane Ride", description: "The view from the float plane was incredible!", category: "view", latitude: 49.2890192,, longitude: -123.1239276, city: , google_place_id: , media_url: )
+Memory.create!(traveller_id: 1, title: "Beaches in Goa", description: "The beaches were unlike anything I have ever seen. Try a Mango Lassi from a local vendor!", category: "view", latitude: 15.221003, longitude: 73.936534, city: , google_place_id: , media_url: )
+Memory.create!(traveller_id: 1, title: "Sunday Sunset", description: "Watching the sun set over the water sent chills through my body.", category: "view", latitude: 15.2185497, longitude: 73.9309366), city: , google_place_id: , media_url: )
+Memory.create!(traveller_id: 1, title: "Spelunking", description: "These caves reminded me of something out of a movie.", category: "nature", latitude: 15.551828, longitude: 74.024991, city: , google_place_id: , media_url: )
+Memory.create!(traveller_id: 2, title: "La Tour Eiffel", description: "I loved this view of the Tour Eiffel.", category: "view", latitude: 48.85837, longitude: 2.294481, city: , google_place_id: , media_url: )
+Memory.create!(traveller_id: 2, title: "Carousel Rides", description: "Magical memories created with my children riding this carousel.", category: "activity", latitude: 48.846204, longitude: 2.334198, city: , google_place_id: , media_url: )
+Memory.create!(traveller_id: 2, title: "The Roundabout", description: "I couldn't believe the traffic around the Arc de Triompe!", category: "landmark", latitude: 48.873792, longitude: 2.295028, city: , google_place_id: , media_url: )
+Memory.create!(traveller_id: 3, title: "Mountain Memories", description: "The Alps, what a view!", category: "view", latitude: 46.203105, longitude: 6.14308, city: , google_place_id: , media_url: )
+Memory.create!(traveller_id: 3, title: "Carving in the Mountain", description: "This etching is such an amazing feat of engineering!", category: "landmark", latitude: 46.2050295, longitude: 6.1440885, city: , google_place_id: , media_url: )

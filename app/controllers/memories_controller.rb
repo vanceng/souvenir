@@ -6,6 +6,7 @@ class MemoriesController < ApplicationController
 
   def show
     @memory = Memory.find(params[:id])
+    @memory.to_json
   end
 
   def new
