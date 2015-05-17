@@ -1,8 +1,16 @@
 Rails.application.routes.draw do
 
+  resources :sessions, only: [:new, :create, :destroy]
+
   resources :users
 
   resources :memories 
+
+  constraints subdomain: 'api' do
+    namespace :api, path: '/' do
+      resources :memories
+    end
+  end
   # get 'users/show'
 
   # get 'users/new'
