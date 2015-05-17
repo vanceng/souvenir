@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 #Heroku integration has previously relied on using the Rails plugin system, which has been removed from Rails 4. To enable features such as static asset serving and logging on Heroku please add
 gem 'rails_12factor', group: :production
 
+#Gem for photo_uploader functionality
+gem 'carrierwave'
+
 ruby '2.1.3'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
