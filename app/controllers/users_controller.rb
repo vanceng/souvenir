@@ -13,13 +13,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
+    @user = User.new(user_params)
 
-    # if @user.save
-    #   redirect_to users_show_path, notice: "Welcome aboard, #{@user.first_name}!"
-    # else
-    #   render :new
-    # end
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to memories_path
+    else
+      render :new
+    end
   end
 
   def update
@@ -31,6 +32,6 @@ class UsersController < ApplicationController
   protected
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :email, :password, :website, :twitter, :facebook, :biography, :profile_photo)
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :website, :twitter, :facebook, :biography, :profile_photo, :image)
   end
 end

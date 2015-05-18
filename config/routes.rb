@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     end
   end
 
+  root to: 'memories#index'
+
+  resources :sessions, only: [:new, :create, :destroy]
+
   resources :users
 
   resources :memories 
