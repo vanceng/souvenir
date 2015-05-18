@@ -1,41 +1,14 @@
 <h1>Memories#show</h1>
 <p>Find me in app/views/memories/show.html.erb</p>
-<%=@memory.title%>
+
 
 </br>
 
-<a href="#" id="signup-btn" data-reveal-id="firstModal" class="radius button">Modal in a modal&hellip;</a>
-<a href="#" data-reveal-id="videoModal" class="radius button">Example Modal with Video&hellip;</a>
+<a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
 
-<!-- Reveal Modals begin -->
-<div id="first-modal" class="reveal-modal" data-reveal aria-labelledby="firstModalTitle" aria-hidden="true" role="dialog">
-  <h2 id="firstModalTitle">This is a modal.</h2>
-  <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-  <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Awesome. I have it.</h2>
+  <p class="lead">Your couch.  It is mine.</p>
+  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
-
-<div id="secondModal" class="reveal-modal" data-reveal aria-labelledby="secondModalTitle" aria-hidden="true" role="dialog">
-  <h2 id="secondModalTitle">This is a second modal.</h2>
-  <p>See? It just slides into place after the other first modal. Very handy when you need subsequent dialogs, or when a modal option impacts or requires another decision.</p>
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div>
-
-<div id="videoModal" class="reveal-modal large" data-reveal aria-labelledby="videoModalTitle" aria-hidden="true" role="dialog">
-  <h2 id="videoModalTitle">This modal has video</h2>
-  <div class="flex-video widescreen vimeo">
-    <iframe width="1280" height="720" src="//www.youtube-nocookie.com/embed/wnXCopXXblE?rel=0" frameborder="0" allowfullscreen></iframe>
-  </div>
-
-  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div>
-
-<script>
-$(function() { 
-  $('#signup-btn').on('click', function() {
-    console.log("test");
-    $('#first-modal').foundation('reveal','open');
-  });
-});
-</script>
