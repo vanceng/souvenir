@@ -6,7 +6,7 @@ gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.3'
+gem 'sass-rails', '~> 5.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -29,9 +29,23 @@ gem 'spring',        group: :development
 #Heroku integration has previously relied on using the Rails plugin system, which has been removed from Rails 4. To enable features such as static asset serving and logging on Heroku please add
 gem 'rails_12factor', group: :production
 
+#Gem for photo_uploader functionality
+gem 'carrierwave'
+
+gem "rmagick"
+
+gem 'geocoder'
+
 ruby '2.1.3'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
+
+gem 'figaro'
+
+gem "fog", "~> 1.3.1"
+
+#gem for foundation UI framework
+gem 'foundation-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
