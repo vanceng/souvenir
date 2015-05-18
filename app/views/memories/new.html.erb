@@ -29,10 +29,10 @@
   <div>
     <%= f.label "google_place_id" %><br>
     <%= f.text_field "google_place_id" %>
-  </div>
+  </div><br>
   <div>
-    <%= f.label "media_url" %><br>
-    <%= f.text_field "media_url" %>
-  </div>
+    <%= f.label "media_url", "Upload an Image" %><br>
+    <%= f.file_field "media_url" %>
+  </div><br>
   <div><%= f.submit "Submit" %></div>
   <% end %>

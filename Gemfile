@@ -33,12 +33,18 @@ gem 'rails_12factor', group: :production
 #Gem for photo_uploader functionality
 gem 'carrierwave'
 
+gem "rmagick"
+
 gem 'geocoder'
 
 
 ruby '2.1.3'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
+
+gem 'figaro'
+
+gem "fog", "~> 1.3.1"
 
 # Use unicorn as the app server
 # gem 'unicorn'
