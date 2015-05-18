@@ -5,12 +5,12 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
+
   constraints subdomain: 'api' do
     namespace :api, path: '/', defaults: {format: :json} do
       resources :memories, :users
     end
   end
-
 
   resources :users
 
