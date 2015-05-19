@@ -9,14 +9,14 @@
 <div id="signinModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <%= form_tag sessions_path do %>
     <div>
-      <%= label_tag "email" %><br/>
-      <%= text_field_tag "email" %>
+      <%= label_tag :title %><br/>
+      <%= text_field_tag :title %>
     </div>
     <div>
-      <%= label_tag :password %><br/>
-      <%= password_field_tag :password %>
+      <%= label_tag :description %><br/>
+      <%= password_field_tag :description %>
     </div>
-    <div><%= submit_tag "Log In" %></div>
+    <div><button id="loginSubmit" type="button">Login</button></div>
   <% end %>
 <!--   <h2 id="modalTitle">I have it.</h2>
   <p class="lead">Your couch.  It is mine.</p>
@@ -25,22 +25,33 @@
 </div>
 
 <script>
-  $("#signinModal").submit(function() {
+  $("#loginSubmit").on('click', function() {
 
-      var url = "http://api.localhost.com:3000/sessions/create"; // the script where you handle the form input.
+    var url = "http://api.localhost.com:3000/memories/"; // the script where you handle the form input.
+    var memory = {
+      title: $("#signinModal #title").val(),
+      description: $("#signinModal #description").val()
+    }; 
 
-      $.ajax({
-             type: "POST",
-             url: url,
-             data: {
-                name: $("#signinModal #email").val()
-             }, // serializes the form's elements.
-             success: function(data)
-             {
-                 alert(data); // show response from the php script.
-             }
-           });
-
-      return false; // avoid to execute the actual submit of the form.
+    $.ajax({     
+      type: "POST",
+      url: url,
+      data: JSON.stringify(memory), // serializes the form's elements.
+      contentType: "application/json",
+      success: function() {
+        $("#signinModal #title").val("");
+        $("#signinModal #description").val("");
+        $("#signinModal").foundation('reveal', 'close');
+ // show response from the php script.
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      }
+    });
   });
+
+  // $("loginSubmit").on('click', function() {
+  //   $("#signinModal").foudnation('reveal', 'close');
+  // });
+
 </script>
