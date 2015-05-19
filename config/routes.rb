@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
 
-  constraints subdomain: 'api' do
-    namespace :api, path: '/', defaults: {format: :json} do
-      resources :memories, :users
-    end
-  end
 
   root to: 'memories#index'
 
   resources :sessions, only: [:new, :create, :destroy]
+
+  constraints subdomain: 'api' do
+    namespace :api, path: '/', defaults: {format: :json} do
+      resources :memories
+      resources :users
+      resources :sessions, only: [:new, :create, :destroy]
+    end
+  end
 
   resources :users
 
