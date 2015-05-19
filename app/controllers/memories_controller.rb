@@ -17,15 +17,18 @@ class MemoriesController < ApplicationController
 
 
   def create
-    query = params[:memory][:latitude].to_s + ", " + params[:memory][:longitude].to_s
-    location = Geocoder.search(query)
-    city = location.first.city
-    place_id = location.first.data["place_id"]
+    @memory = Memory.new(memory_params) 
 
-    new_params = memory_params.clone
-    new_params[:city] = city
-    new_params[:google_place_id] = place_id
-    @memory = Memory.create(new_params)
+    # new_params = memory_params.clone
+    # new_params[:city] = city
+    # new_params[:google_place_id] = place_id
+
+    # @memory = Memory.create(new_params)
+    if @memory.save
+      redirect_to memories_path, notice: 'Souvenir was successfully created.'
+    else
+      render action: "new"
+    end
   end
 
   def update

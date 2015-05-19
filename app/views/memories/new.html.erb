@@ -28,7 +28,7 @@
 <%#= query = memory.lati.to_s + "," + memory[longitude].to_s %>
 
 <div class="memory_create">
-    <%= form_for @memory do |f| %>
+  <%= form_for @memory do |f| %>
       <div>
         <%= f.label "title" , "Title" %><br>
         <%= f.text_field "title" %>
@@ -53,6 +53,6 @@
       <%= f.hidden_field :city %>
       <%= f.hidden_field :google_place_id %>
 
-      <div><%= f.submit "Submit" %></div>
-    <% end %>
-  </div>
+    <div><%= f.submit "Submit" %></div>
+  <% end %>
+</div>

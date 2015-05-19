@@ -1,2 +1,15 @@
-<h1>Memories#index</h1>
-<p>Find me in app/views/memories/index.html.erb</p>
+<h1>Souvenir List</h1>
+
+<div class="memory_list">
+  <% @memories.each do |memory|%>
+
+    <div class="memory_block">
+      <a href = "/memory/<%=memory.id%>"><h1 class = "memory_block_title" ><%= memory.created_at.strftime("%A, %d %B %Y") %></h1></a>
+      <p class = "memory_block_time"><%= memory.latitude %>, <%= memory.longitude %> | <%= memory.created_at.strftime("%I.%M %p") %> | <%= memory.category %></p>
+      <h1 class = "memory_block_comment">"<%= memory.description%>"</h1>
+
+    </div>
+
+  <%end%>
+
+</div>
