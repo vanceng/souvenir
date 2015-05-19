@@ -4,4 +4,10 @@ class Memory < ActiveRecord::Base
   
   mount_uploader :media_url, ImageUploader
 
+def self.address(query, options = {})
+  if (results = search(query, options)).size > 0
+    results.first.address
+  end
+end
+
 end
