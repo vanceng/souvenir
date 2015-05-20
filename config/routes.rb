@@ -7,16 +7,16 @@ Rails.application.routes.draw do
 
   constraints subdomain: 'api' do
     namespace :api, path: '/', defaults: {format: :json} do
-      resources :memories
-      resources :users
+
+      resources :memories, only: [:index]
+      resources :users, only: [:show, :update] do
+        resources :memories, only: [:index, :create, :update, :destroy]
+      end 
       resources :sessions, only: [:new, :create, :destroy]
     end
   end
 
-  resources :users
-
-  resources :memories 
-
+  resources :users, only: [:new, :create] 
   # get 'users/show'
 
   # get 'users/new'
