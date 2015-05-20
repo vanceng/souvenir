@@ -47,4 +47,18 @@
   max-width: 100%;
 }
 
+.map_rightdisplay{
+  width: 50%;
+  float: right;
+  position: fixed;
+  top: 50px;
+  right: 0;
+  padding-top: 10px;
+  height: 50%;
+}
+
+.google_map{
+  width: 100%;
+  height: 800px;
+}
 

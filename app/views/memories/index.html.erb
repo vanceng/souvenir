@@ -7,10 +7,20 @@
       <a href = "/memory/<%=memory.id%>"><h1 class = "memory_block_title" ><%= memory.created_at.strftime("%A, %d %B %Y") %></h1></a>
       <p class = "memory_block_time"><%= memory.latitude %>, <%= memory.longitude %> | <%= memory.created_at.strftime("%I.%M %p") %> | <%= memory.category %></p>
       <h1 class = "memory_block_comment">"<%= memory.description%>"</h1>
-<!--  -->
+
 
     </div>
 
   <%end%>
+
+</div>
+
+<div class="map_rightdisplay">
+
+  <script src="http://maps.googleapis.com/maps/api/js">
+  </script>
+
+  <div id="googleMap" class= "google_map"> 
+  </div>
 
 </div>
