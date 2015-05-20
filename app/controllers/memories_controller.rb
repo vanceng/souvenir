@@ -18,11 +18,11 @@ class MemoriesController < ApplicationController
 
   def create
     @memory = Memory.new(memory_params) 
-    if @memory.save
-      redirect_to memories_path, notice: 'Souvenir was successfully created.'
-    else
-      render action: "new"
-    end
+      if @memory.save
+        redirect_to memories_path, notice: 'Souvenir was successfully created.'
+      else
+        render action: "new"
+      end
   end
 
   def update
