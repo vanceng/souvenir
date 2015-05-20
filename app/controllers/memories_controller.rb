@@ -18,12 +18,6 @@ class MemoriesController < ApplicationController
 
   def create
     @memory = Memory.new(memory_params) 
-
-    # new_params = memory_params.clone
-    # new_params[:city] = city
-    # new_params[:google_place_id] = place_id
-
-    # @memory = Memory.create(new_params)
     if @memory.save
       redirect_to memories_path, notice: 'Souvenir was successfully created.'
     else

@@ -1,0 +1,30 @@
+.memory_block{
+  width: 50%;
+  float: left;
+  position: relative;
+  margin: 20px;
+  background-color: #e2e0e2;
+  padding: 10px;
+}
+
+.menu-image{
+  width: 30px;
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.create-image{
+  width: 35px;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+nav.top-bar {
+  background: none repeat scroll 0 0 white;
+}
+
+.username_display{
+  font-family: quicksand;
+}
+
+
