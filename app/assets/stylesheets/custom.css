@@ -10,21 +10,41 @@
 .menu-image{
   width: 30px;
   margin-left: 10px;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 .create-image{
-  width: 35px;
+  width: 40px;
   margin-right: 10px;
-  margin-top: 5px;
 }
 
-nav.top-bar {
-  background: none repeat scroll 0 0 white;
+.logo-image{
+  display: block;
+  width: 150px;
+  margin-right: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .username_display{
   font-family: quicksand;
+}
+
+.app-bar {
+  background-color: white;
+  padding: 10px 5px 0px 5px;
+}
+.app-bar h1 {
+  color: white;
+  line-height: 1;
+  font-size: 3em;
+}
+.app-bar button {
+  margin: 0;
+}
+.row.full-width {
+  width: 100%;
+  max-width: 100%;
 }
 
 

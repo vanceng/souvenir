@@ -2,3 +2,36 @@
 <p>
   The time is now: <%= Time.now %>
 </p>
+
+<div class="sticky">
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      
+        <a href="#" data-dropdown="drop"><img class="logo-image" src="/assets/logo.png" /></a>
+      
+      <li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+    </ul>
+
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <div class="username_display">
+          <% if current_user %>
+            <%= current_user.full_name %> 
+          <% end %>
+      
+          <a href="#" id= "memory_icon" href="#" data-reveal-id="formModal"><img class="create-image" src="/assets/create.svg" /></a>
+        </div>
+      </ul>
+      <!-- Left Nav Section -->
+      <ul class="left">
+        <a href="#"data-options="align:right" data-dropdown="drop"><img class="menu-image" src="/assets/menu.svg" /></a>
+        <ul id="drop" class="large f-dropdown" data-dropdown-content>
+          <li><a href="#">Sign In/Up</a></li>
+          <li><a href="#">Sign Out</a></li>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </ul>
+    </section>
+  </nav>
+</div>
