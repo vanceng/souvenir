@@ -60,3 +60,4 @@ gem 'rack-cors',
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'pry'
