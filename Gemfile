@@ -47,6 +47,10 @@ gem "fog", "~> 1.3.1"
 #gem for foundation UI framework
 gem 'foundation-rails'
 
+#gem to support cross domain ajax for our API subdomain:
+gem 'rack-cors',
+  :require => 'rack/cors'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
