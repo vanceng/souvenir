@@ -23,6 +23,11 @@
 
 <div class="memory_create">
     <%= form_for :memory do |f| %>
+
+
+      <h4 id= "notice-header">Hey There! What's your Memory</h4>
+
+
       <div>
         <%= f.label :title, "Title" %><br>
         <%= f.text_field :title %>
@@ -82,11 +87,16 @@
           },
           error: function(jqXHR, textStatus, errorThrown) {
             console.log(textStatus, errorThrown);
+
+            $("#notice-header").text("Give it a sec, and try again!");
+
           }
         });
       });
   </script>
+
             
            
+
 
             <!-- MODAL WINDOW END
