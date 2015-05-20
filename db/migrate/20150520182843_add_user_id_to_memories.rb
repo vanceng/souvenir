@@ -1,5 +1,5 @@
 class AddUserIdToMemories < ActiveRecord::Migration
   def change
-    add_column :memories, :user_id, :string 
+    add_column :memories, :user_id, :integer 
   end
 end
