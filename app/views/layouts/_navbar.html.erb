@@ -10,7 +10,9 @@
   <section class="top-bar-section">
     <!-- Right Nav Section -->
     <ul class="right">
-      <li class="active"><a id= "memory_icon" href="#" data-reveal-id="formModal">Create New Souvenir</a></li>
+      <% if current_user %>
+        <li class="active"><a id= "memory_icon" href="#" data-reveal-id="formModal">Create New Souvenir</a></li>
+      <% end %>
     </ul>
   </section>
 
@@ -19,4 +21,3 @@
   
 
 </nav>
-
