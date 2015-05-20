@@ -22,7 +22,7 @@
   Memory.create!(traveller_id: 3,city: "Geneva",comment: "The Alps, what a view!", category: "view", photo_url: "/img/city/switzerland.jpg", latitude: 46.203105, longitude: 6.14308)
   Memory.create!(traveller_id: 3,city: "Geneva",comment: "This etching is such an amazing feat of engineering!", category: "landmark", photo_url: "/img/city/switzerland2.jpg", latitude: 46.2050295, longitude: 6.1440885)
 
-a = Memory.create!(traveller_id: 1, title: "Steamclock", description: "The Steamclock rings on the hour. An icon of Gastown.", category: "landmark", latitude: 49.284436, longitude: -123.108896, city: "Vancouver", google_place_id: , media_url: )
+a = Memory.create!(traveller_id: 1, title: "Steamclock",description: "The Steamclock rings on the hour. An icon of Gastown.",category: "landmark",latitude: 49.284436,longitude: -123.108896,city: "Vancouver",google_place_id: ,media_url: )
 b = Memory.create!(traveller_id: 1, title: "Coffee at Prado", description: "This Coffee was one of the best I ever had.", category: "food", latitude: 49.283915, longitude: -123.109554, city: "Vancouver", google_place_id: , media_url: )
 c = Memory.create!(traveller_id: 1, title: "Hiking at Lynn Canyon", description: "Walking in Lynn canyon felt like I was in a land forgotten by time.", category: "nature", latitude: 49.339074, longitude: -123.018063, city: "Vancouver", google_place_id: , media_url: )
 d = Memory.create!(traveller_id: 1, title: "Float Plane Ride", description: "The view from the float plane was incredible!", category: "view", latitude: 49.2890192,, longitude: -123.1239276, city: , google_place_id: , media_url: )

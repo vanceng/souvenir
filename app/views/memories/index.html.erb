@@ -8,6 +8,8 @@
       <p class = "memory_block_time"><%= memory.latitude %>, <%= memory.longitude %> | <%= memory.created_at.strftime("%I.%M %p") %> | <%= memory.category %></p>
       <h1 class = "memory_block_comment">"<%= memory.description%>"</h1>
 
+      (<%= link_to "edit", edit_memory_path(@memory) %>, <%= link_to "delete", memory_path(@memory), method: :delete, data: { confirm: "You sure?" } %>)
+
     </div>
 
   <%end%>
