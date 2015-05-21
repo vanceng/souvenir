@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  root to: 'memories#index'
+  root to: 'home#index'
 
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -9,7 +9,6 @@ Rails.application.routes.draw do
     namespace :api, path: '/', defaults: {format: :json} do
 
       resources :memories, only: [:index]
-      resources :home, only: [:index, :show]
       resources :bookmarks, only: [:index, :create, :destroy]
       resources :users, only: [:show, :update] do
         resources :memories, only: [:index, :create, :update, :destroy]
@@ -19,7 +18,7 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :create] 
-
+  resources :home, only: [:index, :show]
 
   # get 'users/show'
 
