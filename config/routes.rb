@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   constraints subdomain: 'api' do
     namespace :api, path: '/', defaults: {format: :json} do
-
       resources :memories, only: [:index]
       resources :bookmarks, only: [:index, :create, :destroy]
       resources :users, only: [:show, :update] do
