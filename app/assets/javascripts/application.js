@@ -16,9 +16,9 @@
 
 // var map;
 
-// $(function(){ $(document).foundation();
+$(function(){ $(document).foundation();
 
-
+});
 
 //   function displayMemoryMarker(memoryId) {
 //     $.ajax({
