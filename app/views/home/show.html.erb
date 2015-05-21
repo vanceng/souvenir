@@ -1,13 +1,56 @@
 This is our Search Results Page
 
-<div id="container" class="js-masonry"
-  data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'>
-  <div class="item"><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p></div>
-  <div class="item w2">...<p>asdjf</p><p>asdjf</p></div>
-  <div class="item">...<p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p></div>
-  <div class="item"><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p></div>
-  <div class="item w2">...<p>asdjf</p><p>asdjf</p></div>
-  <div class="item">...<p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p></div>  <div class="item"><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p></div>
-  <div class="item w2">...<p>asdjf</p><p>asdjf</p></div>
-  <div class="item">...<p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p><p>asdjf</p></div>  
+<script>
+
+var url = "http://api.localhost.com:3000/memories/";
+        var memory = {
+          title: $("#memory_title").val(),
+          description: $("#memory_description").val(),
+          longitude: $("#memory_longitude").val(),
+          latitude: $("#memory_latitude").val(), 
+          city: $("#memory_city").val(),
+          google_place_id: $("#memory_google_place_id").val(),
+          category: $("#memory_category").val(),
+          media_url: $("#memory_media_url").val(),
+        }; 
+
+        // $.ajax({     
+        //   type: "POST",
+        //   url: url,
+        //   data: JSON.stringify(memory),
+        //   contentType: "application/json",
+        //   success: function() {
+        //     $("#memory_title").val("");
+        //     $("#memory_description").val("");
+        //     $("#memory_longitude").val("");
+        //     $("#memory_latitude").val("");
+        //     $("#memory_city").val("");
+        //     $("#memory_google_place_id").val("");
+        //     $("#memory_category").val("");
+        //     $("#memory_media_url").val("");
+        //     $("#formModal").foundation('reveal', 'close');
+        //   },
+        //   error: function(jqXHR, textStatus, errorThrown) {
+        //     console.log(textStatus, errorThrown);
+
+        //     $("#notice-header").text("Give it a sec, and try again!");
+
+        //   }
+        // });
+
+</script>
+
+
+<div id="wrapper">
+  <div id="list">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">1</div>
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">1</div> 
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">1</div>
+  </div>  
 </div>
