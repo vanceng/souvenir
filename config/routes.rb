@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  root to: 'memories#index'
+  root to: 'home#index'
 
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -19,6 +19,12 @@ Rails.application.routes.draw do
   end
 
   resources :users, only: [:show, :create] 
+
+  resources :bookmarks, only: [:index]
+
+  get '/search', to: "home#show"
+
+
 
 
   # get 'users/show'
