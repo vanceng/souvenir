@@ -17,6 +17,10 @@ class UsersController < ApplicationController
     respond_with @user 
   end
 
+  def show
+    @user = User.find(params[:id])
+    render "show"
+  end
 
   protected
 

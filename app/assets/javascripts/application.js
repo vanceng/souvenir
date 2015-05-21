@@ -16,7 +16,7 @@
 
 // var map;
 
-// $(function(){ $(document).foundation();
+$(function(){ $(document).foundation();});
 
 
 
