@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20150520182843) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bookmarks_memories", id: false, force: true do |t|
-    t.integer "bookmark_id"
+  create_table "bookmarks", id: false, force: true do |t|
     t.integer "memory_id"
+    t.integer "user_id"
   end
 
   create_table "memories", force: true do |t|
