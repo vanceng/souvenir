@@ -1,56 +1,43 @@
-This is our Search Results Page
-
+<p>This is our Search Results Page</p>
+<br>
+<br>
 <script>
+  function CallURL(){
+    var url = "http://api.localhost.com:3000/memories/";
+          
+    $.ajax({     
+      type: "GET",
+      url: url,
+      contentType: "application/json",
+      success: function(msg) {
+        JsonpCallback(msg);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      }
+    });
+  }
 
-var url = "http://api.localhost.com:3000/memories/";
-        var memory = {
-          title: $("#memory_title").val(),
-          description: $("#memory_description").val(),
-          longitude: $("#memory_longitude").val(),
-          latitude: $("#memory_latitude").val(), 
-          city: $("#memory_city").val(),
-          google_place_id: $("#memory_google_place_id").val(),
-          category: $("#memory_category").val(),
-          media_url: $("#memory_media_url").val(),
-        }; 
+  function JsonpCallback(json)
+  {
+    console.log(json[0].title)
+    $.each(json, function(i, item) {
+      console.log(item.latitude);
+          $('#wrapper').append('<div class="item"> longitude: ' + item.longitude + ' latitude: ' + item.latitude );  
+      });
+  }
 
-        // $.ajax({     
-        //   type: "POST",
-        //   url: url,
-        //   data: JSON.stringify(memory),
-        //   contentType: "application/json",
-        //   success: function() {
-        //     $("#memory_title").val("");
-        //     $("#memory_description").val("");
-        //     $("#memory_longitude").val("");
-        //     $("#memory_latitude").val("");
-        //     $("#memory_city").val("");
-        //     $("#memory_google_place_id").val("");
-        //     $("#memory_category").val("");
-        //     $("#memory_media_url").val("");
-        //     $("#formModal").foundation('reveal', 'close');
-        //   },
-        //   error: function(jqXHR, textStatus, errorThrown) {
-        //     console.log(textStatus, errorThrown);
+  $( function() {
 
-        //     $("#notice-header").text("Give it a sec, and try again!");
+    CallURL();
 
-        //   }
-        // });
+  });
 
 </script>
 
 
+
 <div id="wrapper">
   <div id="list">
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">1</div>
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">1</div> 
-    <div class="item">1</div>
-    <div class="item">2</div>
-    <div class="item">1</div>
   </div>  
 </div>
