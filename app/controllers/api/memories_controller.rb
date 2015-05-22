@@ -9,12 +9,15 @@ module API
       elsif params[:user_id]
         @memories = Memory.where(user_id: params[:user_id])
       elsif params[:search]
-        @memories = Memory.where(city: params[:search])
+        if params[:search].blank?
+          @memories = Memory.all 
+        else
+          @memories = Memory.where(city: params[:search])
+        end
       else 
-      @memories = Memory.all
+        @memories = Memory.all
       end
-      respond_with @memories
-
+        respond_with @memories
     end
 
     def show
