@@ -52,6 +52,16 @@
   max-width: 100%;
 }
 
+.memories-leftdisplay {
+  width: 50%;
+  float: left;
+  top: 50px;
+  right: 0;
+  padding-top: 10px;
+  height: 50%;
+}
+
+
 .map_rightdisplay{
   width: 50%;
   float: right;
@@ -79,12 +89,21 @@
   margin-bottom: -1.875em; /* 30px */
 }
 
+.user-view-item{
+  width: 90%; /* 300px */
+  /*margin: 0 auto;*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1.87em;
+  margin-bottom: 1.87em; /* 15px 30px */
+  background-color: grey;
+}
+
 .item{
   width: 30.303%; /* 300px */
   float: left;
   margin: 0 1.515% 1.875em; /* 15px 30px */
-      background-color: grey;
-
+  background-color: grey;
 }
  
 @media only screen and ( max-width: 40em ) {/* 640px */
@@ -116,3 +135,4 @@
     height: 20px;
     margin: 0 auto;
 }
+
