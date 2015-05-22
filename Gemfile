@@ -61,3 +61,4 @@ gem 'rack-cors',
 # gem 'debugger', group: [:development, :test]
 
 gem 'pry'
+gem 'quiet_assets'

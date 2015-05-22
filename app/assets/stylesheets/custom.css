@@ -83,15 +83,18 @@
   width: 30.303%; /* 300px */
   float: left;
   margin: 0 1.515% 1.875em; /* 15px 30px */
-      background-color: grey;
-
+  background-color: #e2e0e2;
+  padding: 1em;
+  font-family: quicksand;
 }
  
 @media only screen and ( max-width: 40em ) {/* 640px */
   .item{
     width: 46.876%; /* 305px */
     margin-bottom: 0.938em; /* 15px */
-    background-color: grey;
+    background-color: #e2e0e2;
+    padding: 1em;
+    font-family: quicksand;
   }
 }
 
@@ -105,7 +108,9 @@
     width: 100%;
     margin-left: 0;
     margin-right: 0;
-    background-color: grey;
+    background-color: #e2e0e2;
+    padding: 1em;
+    font-family: quicksand;
   }
 }
 
@@ -115,4 +120,9 @@
     width: 644px;
     height: 20px;
     margin: 0 auto;
+}
+
+.item h6{
+  font-family: quicksand;
+  font-size: 8px;
 }

@@ -2,12 +2,16 @@
 <br>
 <br>
 <script>
+  $(function() {
+
   function CallURL(){
     var url = "http://api.localhost.com:3000/memories/";
-          
+    var searchTerms = $('#search-city').val();
+
     $.ajax({     
       type: "GET",
       url: url,
+      data: { search: searchTerms },
       contentType: "application/json",
       success: function(msg) {
         JsonpCallback(msg);
@@ -22,20 +26,31 @@
   {
     console.log(json[0].title)
     $.each(json, function(i, item) {
-      console.log(item.latitude);
-          $('#wrapper').append('<div class="item"> longitude: ' + item.longitude + ' latitude: ' + item.latitude );  
+          
+          $('#wrapper').append('<div class="item">' + (moment(item.created_at).format("MMM Do YYYY")) + "<br/><h6>" + item.latitude + ", " + item.longitude + " | " +(moment(item.created_at).format("h:mm a")) + " | " + item.category + "</h6>" + item.description + item.city);  
       });
   }
 
-  $( function() {
 
-    CallURL();
+    $("#search-form").on('submit', function(e) {
+      e.preventDefault();
+      console.log("submit");
+      CallURL();
 
+    });
   });
-
 </script>
 
-
+<form id='search-form'> 
+  <div class="row">
+    <div class="ten mobile-three columns">
+      <input id="search-city" class="search-input"type="text" name="search" placeholder="Search Cities" />
+    </div>
+    <div class="two mobile-one columns">
+      <input id="search-submit" type="submit" value="search" class="button expand postfix" />
+    </div>
+  </div>
+</form><br>
 
 <div id="wrapper">
   <div id="list">
