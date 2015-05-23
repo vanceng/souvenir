@@ -1,6 +1,11 @@
 <p>This is our Search Results Page</p>
+
 <% @current_user =  User.find(session["user_id"]) %>
 
+
+
+<br>
+<br>
 
 <script>
   $(function() {
@@ -22,6 +27,7 @@
       }
     });
   }
+
 
   function JsonpCallback(json) {
     $.each(json, function(i, item) {
@@ -79,7 +85,6 @@
 
 
 </script>
-
 
 <form id='search-form'> 
   <div class="row">
