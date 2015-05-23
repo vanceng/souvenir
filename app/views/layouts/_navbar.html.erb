@@ -1,0 +1,29 @@
+<div data-magellan-expedition="fixed">
+  <div class="row full-width app-bar">
+
+    <div class="text-left small-4 medium-2 columns">
+        <ul class="left">
+          <a href="#"data-options="align:right" data-dropdown="drop"><img class="menu-image" src="/assets/menu.svg" /></a>
+          <ul id="drop" class="large f-dropdown" data-dropdown-content>
+            <li><a href="#" data-reveal-id="loginModal" class="radius button">Sign In/Up</a></li>
+            <li><a href="#">Sign Out</a></li>
+            <li><a href="/">Home</a></li>
+          </ul>
+        </ul>
+    </div>
+
+    <div class="small-4 medium-8 columns">
+      <a href="#" data-dropdown="drop"><img class="logo-image" src="/assets/logo.png" /></a> 
+    </div>
+
+    <div class="text-right small-4 medium-2 columns username_display">
+      <%# if current_user %>
+        <%#= current_user.full_name %> 
+      <%# end %>
+      <a href="#" id= "memory_icon" href="#" data-reveal-id="formModal"><img class="create-image" src="/assets/create.svg" /></a>
+    </div>
+
+  </div>
+
+</div>
+
