@@ -61,7 +61,6 @@
   height: 50%;
 }
 
-
 .map_rightdisplay{
   width: 50%;
   float: right;
@@ -108,6 +107,18 @@
   font-family: quicksand;
 }
  
+#memories-edit-menu {
+ background: orange;
+ float: right;
+ color: blue;
+}
+
+#memories-menu {
+  float: right;
+  color: red;
+}
+
+
 @media only screen and ( max-width: 40em ) {/* 640px */
   .item{
     width: 46.876%; /* 305px */
