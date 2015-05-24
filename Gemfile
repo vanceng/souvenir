@@ -32,7 +32,11 @@ gem 'rails_12factor', group: :production
 #Gem for photo_uploader functionality
 gem 'carrierwave'
 
+<<<<<<< HEAD
 gem "mini_magick"
+=======
+gem "rmagick"
+>>>>>>> ac6adfd261ea18cd0af9247500a3fc7f0e06841a
 
 gem 'geocoder'
 
