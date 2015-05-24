@@ -1,5 +1,6 @@
 <p>This is our Search Results Page</p>
 
+
 <% @current_user =  User.find(session["user_id"]) %>
 
 
@@ -87,6 +88,7 @@
 
   });
 
+
 </script>
 
 <form id='search-form'> 
@@ -101,11 +103,6 @@
 </form><br>
 
 <div id="wrapper">
-  <%#s= @memories.each do |memory|%>
   <div id="list">
-
-
- 
-  </div>
-     <%#end%>  
+  </div>  
 </div>
