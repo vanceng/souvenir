@@ -1,0 +1,97 @@
+<<<<<<< HEAD
+=======
+<!-- This is the Markup for the User's Profile on the top-->
+
+<div id = "user-profile">
+  <img src = <%= @user.image %> >
+  <h3> <%= @user.first_name %> <%= @user.last_name %></h3>
+  <h5> <%= @user.biography %> </h5>
+  <h7> <%= @user.twitter %> <%= @user.facebook %> <%= @user.website %> </h7>
+</div>
+
+
+
+<!-- This is the Markup for the Memories Tiles on the Left-->
+<div class = "memories-leftdisplay" data-user-id="<%= params[:id] %>">
+  <div id = "memory-list"></div>
+</div>
+
+
+
+<!-- This JS executes the JS to get the Memories Tiles on the Left -->
+<script>
+  $( function() {
+    getUserMemories();
+  });
+</script>
+
+<!-- This JS displays the User's Memory Map on the Right -->
+<div class="map_rightdisplay">
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <div id="googleMap" class= "google_map"></div>
+</div>
+
+
+<!-- This JS displays the User's Memories Tiles on the Left -->
+<script> 
+
+  var userId = <%= params[:id] %>
+
+  function getUserMemories() {
+    var url = "http://api.localhost.com:3000/memories?user_id=" + userId ;
+          
+    $.ajax({     
+      type: "GET",
+      url: url,
+      contentType: "application/json",
+      success: function(data) {
+        displayUserMemories(data);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      }
+    });
+  }
+
+  // This is displaying the User's Edit Menu on each Memory Tile
+
+  function displayUserMemories(data) {
+    var tile = $('#memory-list');
+    $.each(data, function(i, item) {
+      
+      tile.append('<div id = "memory-tile" data-memorytile = "' + item.id + '">' + editMenu(item) + memoryInfo(item) + '</div></br>');
+      var me = this;
+      $("#hover1 #menu-del").on('click', function() {
+        var memoryId = me.item;
+        console.log(memoryId); 
+        debugger 
+      });
+    });
+  };
+
+  function editMenu(item) {
+    return '<div id = "memories-edit-menu"><a id = "memories-menu" href="#" data-dropdown="hover1" data-options="is_hover:true; hover_timeout:5000">edit menu</a> <ul id="hover1" class="f-dropdown" data-dropdown-content> \
+        <li><a href="#">Edit</a></li> \
+        <li><a id = "menu-del" href="#">Delete</a></li> <li> \
+        <a href="#">Make Private</a></li> \
+      </ul></div>';
+  };
+
+
+  function memoryInfo(item) {
+    return ' <h5>title: ' + item.id + '</h5><h9>at ' + item.longitude + ', ' + item.latitude + '</h9><div id= "memory-description"><h4>Description: ' + item.description + '</h4></div> <img id= "memory-image" src=' + '//gifrific.com/wp-content/uploads/2014/02/Michelle-Tanner-You-Got-it-Dude-Full-House.gif> ' + '</img> </div>';
+  }
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+>>>>>>> 127a20b7b4118184c1c37c64d894796e6a8d27d5

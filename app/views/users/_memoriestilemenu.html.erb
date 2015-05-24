@@ -3,9 +3,40 @@
   <a id = "memories-menu" href="#" data-dropdown="hover1" data-options="is_hover:true; hover_timeout:5000">edit menu</a>
 
   <ul id="hover1" class="f-dropdown" data-dropdown-content>
-    <li><a href="#">This is a link</a></li>
-    <li><a href="#">This is another</a></li>
-    <li><a href="#">Yet another</a></li>
+    <li><a href="#">Edit</a></li>
+    <li><a id = "menu-del" href="#">Delete</a></li>
+    <li><a href="#">Make Private</a></li>
   </ul>
 
 </div>
+
+<script>
+
+// var url
+// var memory_id = 
+
+$("#hover1 #menu-del").on('click', function() {
+  
+
+  // var memory_id = $(this).attr("data-memory-id");
+  // console.log(memory_id);
+
+var memory_id = $(this).closest('div.user-view-item');
+console.log(memory_id)
+
+  // $.ajax({
+  //   type: 
+
+
+
+
+
+  });
+
+
+
+
+// });
+
+
+</script>
