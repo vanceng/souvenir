@@ -78200,3 +78200,53 @@ NoMethodError (undefined method `bookmark_url' for #<API::BookmarksController:0x
   Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
   Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (27.2ms)
   [1m[36mBookmark Load (0.8ms)[0m  [1mSELECT "bookmarks".* FROM "bookmarks"[0m
+
+
+Started GET "/search" for 10.0.2.2 at 2015-05-24 01:32:07 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#show as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered home/show.html.erb within layouts/application (124.9ms)
+  Rendered layouts/_navbar.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_footer.html.erb (3.7ms)
+  Rendered layouts/_newmemory.html.erb (77.1ms)
+  Rendered layouts/_login.html.erb (2.0ms)
+Completed 200 OK in 20898ms (Views: 20859.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/search" for 10.0.2.2 at 2015-05-24 01:32:29 +0000
+Processing by HomeController#show as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 1]]
+  Rendered home/show.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_navbar.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 1]]
+  Rendered layouts/_footer.html.erb (1.8ms)
+  Rendered layouts/_newmemory.html.erb (2.2ms)
+  Rendered layouts/_login.html.erb (1.4ms)
+Completed 200 OK in 1673ms (Views: 1672.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/memories/?search=" for 10.0.2.2 at 2015-05-24 01:32:50 +0000
+Processing by API::MemoriesController#index as JSON
+  Parameters: {"search"=>"", "subdomain"=>"api", "memory"=>{}}
+  [1m[35mMemory Load (5.9ms)[0m  SELECT "memories".* FROM "memories"
+Completed 200 OK in 86ms (Views: 18.3ms | ActiveRecord: 7.6ms)
+
+
+Started POST "/bookmarks/" for 10.0.2.2 at 2015-05-24 01:33:03 +0000
+Processing by API::BookmarksController#create as JSON
+  Parameters: {"memory_id"=>"4", "user_id"=>"1", "subdomain"=>"api", "bookmark"=>{"memory_id"=>"4", "user_id"=>"1"}}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "bookmarks" ("memory_id", "user_id") VALUES ($1, $2)  [["memory_id", 4], ["user_id", 1]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 81ms
+
+NoMethodError (undefined method `bookmark_url' for #<API::BookmarksController:0xb2c9c270>):
+  app/controllers/api/bookmarks_controller.rb:17:in `create'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (33.7ms)
