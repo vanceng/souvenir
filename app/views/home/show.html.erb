@@ -1,0 +1,103 @@
+<p>This is our Search Results Page</p>
+
+<% @current_user =  User.find(session["user_id"]) %>
+
+
+
+<br>
+<br>
+
+<script>
+  $(function() {
+
+  function CallURL(){
+    var url = "http://api.localhost.com:3000/memories/";
+    var searchTerms = $('#search-city').val();
+
+    $.ajax({     
+      type: "GET",
+      url: url,
+      data: { search: searchTerms },
+      contentType: "application/json",
+      success: function(msg) {
+        JsonpCallback(msg);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.log(textStatus, errorThrown);
+      }
+    });
+  }
+
+
+  function JsonpCallback(json) {
+    $.each(json, function(i, item) {
+          
+          $('#wrapper').append('<div class="item" >' + (moment(item.created_at).format("MMM Do YYYY")) + "<br/><h6>" + item.latitude + ', ' + item.longitude + " | " +(moment(item.created_at).format("h:mm a")) + ' | ' + item.category + '</h6>' + item.description + item.city + '<br/> <img src=' + item.media_url + '/>' + '<br/><img name="bookmark-image" data-memory_id="' + item.id + '" data-user_id=<%= @current_user.id %> class="bookmark-image" src="/assets/bookmark.png" /></div>');  
+
+          $("img").error(function(){
+          $(this).hide();
+          });
+    });
+  }
+
+
+  $("#search-form").on('submit', function(e) {
+    e.preventDefault();
+    $("#wrapper").empty();
+    console.log("submit");
+    CallURL();
+    return false
+  });
+
+
+
+
+  $("#wrapper").on('click', ".bookmark-image", function() {
+    console.log("bookmarked!");
+    console.log($(this).attr("data-memory_id"));
+    console.log($(this).attr("data-user_id"));
+
+    var url = "http://api.localhost.com:3000/bookmarks/";
+    var bookmark = {
+      memory_id: $(this).attr("data-memory_id"),
+      user_id: $(this).attr("data-user_id"),
+    };
+
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: JSON.stringify(bookmark),
+      contentType: "application/json",
+      success: function() {
+        $("#bookmark_user_id").val("");
+        $("#bookmark_memory_id").val("");
+      }
+      // error: function(jqXHR, textStatus, errorThrown) {
+      //   console.log(textStatus, errorThrown);
+
+      //   $("#notice-header").text("Give it a sec, and try again!");
+
+      // }
+    });
+
+  });
+});
+
+
+</script>
+
+<form id='search-form'> 
+  <div class="row">
+    <div class="ten mobile-three columns">
+      <input id="search-city" class="search-input"type="text" name="search" placeholder="Search Cities" />
+    </div>
+    <div class="two mobile-one columns">
+      <input id="search-submit" type="submit" value="search" class="button expand postfix" />
+    </div>
+  </div>
+</form><br>
+
+<div id="wrapper">
+  <div id="list">
+  </div>  
+</div>

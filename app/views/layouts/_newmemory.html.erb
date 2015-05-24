@@ -1,0 +1,98 @@
+<!-- MODAL WINDOW -->    
+<div id="memoryModal" class="reveal-modal small" data-reveal>
+<% @current_user =  User.find(session["user_id"]) %>
+
+  <h3>Please fill in the form below and we will contact you shortly</h3>
+  <fieldset>
+
+
+  <script type="text/javascript"> 
+    $(function() {
+    
+      $("#memory_icon").on('click', function() {
+        navigator.geolocation.getCurrentPosition(set_coordinates);
+
+        function set_coordinates(obj) {
+          console.log(obj.coords.latitude);
+          console.log(obj.coords.longitude);
+          $('input#memory_latitude').val(obj.coords.latitude);
+          $('input#memory_longitude').val(obj.coords.longitude);
+        };
+      });
+
+      $("#memory-submit").on('click', function() {
+
+        console.log("click")
+
+        var url = "http://api.localhost.com:3000/users/" + <%=@current_user.id %> + "/memories/";
+        var memory = {
+          user_id: <%=@current_user.id %>,
+          title: $("#memory_title").val(),
+          description: $("#memory_description").val(),
+          longitude: $("#memory_longitude").val(),
+          latitude: $("#memory_latitude").val(), 
+          category: $("#memory_category").val(),
+          media_url: $("#memory_media_url").val()
+        }; 
+
+        $.ajax({     
+          type: "POST",
+          url: url,
+          data: JSON.stringify(memory),
+          contentType: "application/json",
+          success: function() {
+            $("#memory_title").val("");
+            $("#memory_description").val("");
+            $("#memory_longitude").val("");
+            $("#memory_latitude").val("");
+            $("#memory_category").val("");
+            $("#memory_media_url").val("");
+            $("#memoryModal").foundation('reveal', 'close');
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(textStatus, errorThrown);
+
+            $("#notice-header").text("Give it a sec, and try again!");
+
+          }
+        });
+      });
+
+    });
+  </script>
+
+
+<div class="memory_create">
+    <%= form_for :memory do |f| %>
+
+
+      <h4 id= "notice-header">Hey There! What's your Memory</h4>
+
+
+      <div>
+        <%= f.label :title, "Title" %><br>
+        <%= f.text_field :title %>
+      </div>
+      <div>
+        <%= f.label :description, "Description" %><br>
+        <%= f.text_field :description %>
+      </div>
+      <div>
+        <%= f.label :category %><br>
+        <%= f.text_field :category %>
+      </div>
+      <div>
+        <%= f.label :media_url, "Upload an Image" %><br>
+        <%= f.file_field :media_url %>
+      </div><br>
+        <%= f.hidden_field :longitude %>
+        <%= f.hidden_field :latitude %>
+        <%= f.hidden_field :city %>
+        <%= f.hidden_field :google_place_id %>
+        <% @current_user =  User.find(session["user_id"]) %>
+       <div>
+       <button id="memory-submit" type="button">Save</button>
+       </div>
+    <% end %>
+  </div>
+            <!-- MODAL WINDOW END
