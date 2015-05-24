@@ -18,13 +18,13 @@ module API
     end
 
     def update
-      @bookmark = Memory.find(params[:id])
-      @bookmark.update_attributes(memory_params)
+      @bookmark = Bookmark.find(params[:id])
+      @bookmark.update_attributes(bookmark_params)
       respond_with @bookmark 
     end
 
     def destroy
-      @bookmark = Memory.find(params[:id])
+      @bookmark = Bookmark.find(params[:id])
       @bookmark.destroy
       respond_with @bookmark 
     end

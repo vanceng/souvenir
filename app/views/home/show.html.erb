@@ -7,82 +7,85 @@
 <br>
 <br>
 
-<script>
-  $(function() {
+ <script>
 
-  function CallURL(){
+  function CallURL(searchTerms){
     var url = "http://api.localhost.com:3000/memories/";
-    var searchTerms = $('#search-city').val();
 
-    $.ajax({     
-      type: "GET",
-      url: url,
-      data: { search: searchTerms },
-      contentType: "application/json",
-      success: function(msg) {
-        JsonpCallback(msg);
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-      }
-    });
-  }
+      $.ajax({     
+        type: "GET",
+        url: url,
+        data: { search: searchTerms },
+        contentType: "application/json",
+        success: function(json) {
+          SearchCallback(json);
+        },
+        // error: function(jqXHR, textStatus, errorThrown) {
+        //   console.log(textStatus, errorThrown);
+        // }
+      });
+    }
 
-
-  function JsonpCallback(json) {
+    function SearchCallback(json) {
     $.each(json, function(i, item) {
-          
-          $('#wrapper').append('<div class="item" >' + (moment(item.created_at).format("MMM Do YYYY")) + "<br/><h6>" + item.latitude + ', ' + item.longitude + " | " +(moment(item.created_at).format("h:mm a")) + ' | ' + item.category + '</h6>' + item.description + item.city + '<br/> <img src=' + item.media_url + '/>' + '<br/><img name="bookmark-image" data-memory_id="' + item.id + '" data-user_id=<%= @current_user.id %> class="bookmark-image" src="/assets/bookmark.png" /></div>');  
+            
+      $('#wrapper').append('<div class="item" >' + (moment(item.created_at).format("MMM Do YYYY")) + "<br/><h6>" + item.latitude + ', ' + item.longitude + " | " +(moment(item.created_at).format("h:mm a")) + ' | ' + item.category + '</h6>' + item.description + item.city + '<br/> <img src=' + item.media_url + '/>' + '<br/><img name="bookmark-image" data-memory_id="' + item.id + '" data-user_id=<%= @current_user.id %> class="bookmark-image" src="/assets/bookmark.png" /></div>'); 
 
-          $("img").error(function(){
-          $(this).hide();
-          });
-    });
-  }
-
-
-  $("#search-form").on('submit', function(e) {
-    e.preventDefault();
-    $("#wrapper").empty();
-    console.log("submit");
-    CallURL();
-    return false
-  });
-
-
-
-
-  $("#wrapper").on('click', ".bookmark-image", function() {
-    console.log("bookmarked!");
-    console.log($(this).attr("data-memory_id"));
-    console.log($(this).attr("data-user_id"));
-
-    var url = "http://api.localhost.com:3000/bookmarks/";
-    var bookmark = {
-      memory_id: $(this).attr("data-memory_id"),
-      user_id: $(this).attr("data-user_id"),
+         $("img").error(function(){
+           $(this).hide();
+           }); 
+      });
     };
 
-    $.ajax({
-      type: "POST",
-      url: url,
-      data: JSON.stringify(bookmark),
-      contentType: "application/json",
-      success: function() {
-        $("#bookmark_user_id").val("");
-        $("#bookmark_memory_id").val("");
-      }
-      // error: function(jqXHR, textStatus, errorThrown) {
-      //   console.log(textStatus, errorThrown);
 
-      //   $("#notice-header").text("Give it a sec, and try again!");
+  $(function() {
 
-      // }
+    var firstRefresh = "<%= @memories %>";
+
+    CallURL(firstRefresh);
+
+    $("#search-submit").on('click', function(e) {
+      e.preventDefault();
+      var testTerm = $("#search-city").val();
+      $("#wrapper").empty();
+      console.log(testTerm);
+      CallURL(testTerm);
+      return false
     });
 
-  });
-});
 
+    $("#wrapper").on('click', ".bookmark-image", function() {
+      console.log("bookmarked!");
+      console.log($(this).attr("data-memory_id"));
+      console.log($(this).attr("data-user_id"));
+
+      var url = "http://api.localhost.com:3000/bookmarks/";
+      var bookmark = {
+        memory_id: $(this).attr("data-memory_id"),
+        user_id: $(this).attr("data-user_id"),
+      };
+
+      $.ajax({
+        type: "POST",
+        url: url,
+        data: JSON.stringify(bookmark),
+        contentType: "application/json",
+        success: function() {
+          $("#bookmark_user_id").val("");
+          $("#bookmark_memory_id").val("");
+        }
+        // error: function(jqXHR, textStatus, errorThrown) {
+        //   console.log(textStatus, errorThrown);
+
+        //   $("#notice-header").text("Give it a sec, and try again!");
+
+        // }
+      });
+
+    });
+
+
+  });
 
 </script>
 
@@ -92,12 +95,17 @@
       <input id="search-city" class="search-input"type="text" name="search" placeholder="Search Cities" />
     </div>
     <div class="two mobile-one columns">
-      <input id="search-submit" type="submit" value="search" class="button expand postfix" />
+      <button id="search-submit" type="button" value="search" class="button expand postfix">button</button>
     </div>
   </div>
 </form><br>
 
 <div id="wrapper">
+  <%#s= @memories.each do |memory|%>
   <div id="list">
-  </div>  
+
+
+ 
+  </div>
+     <%#end%>  
 </div>

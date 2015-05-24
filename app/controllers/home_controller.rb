@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   end
 
   def show
-    # @memory = Memory.find(params[:search])
+    @memories = params[:search]
     render "show"
   end
 
