@@ -26,8 +26,9 @@ module API
     end
 
     def create
+      @test = "success"
       @memory = Memory.create(memory_params)
-      respond_with @memory 
+      respond_with @test 
     end
 
     def update
