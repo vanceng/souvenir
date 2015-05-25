@@ -1,9 +1,12 @@
 module API
   class BookmarksController < ApplicationController
   respond_to :json
-
+  
     def index
       @bookmarks = Bookmark.all
+      # respond_to do |format|
+      #   format.json { @bookmarks.to_json }
+      # end
       respond_with @bookmarks
     end
 

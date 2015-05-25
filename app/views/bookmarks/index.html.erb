@@ -3,13 +3,47 @@ if logged in...
 
 This is our user's bookmark page
 
-<% user_id = @current_user.id %>
+<% @user_id = @current_user.id %>
 
 <script>
 
+  // function CallURL(searchTerms){
+  //   var url = "http://api.localhost.com:3000/bookmarks/";
+
+  //     $.ajax({     
+  //       type: "GET",
+  //       url: url,
+  //       data: { user_id: searchTerms },
+  //       contentType: "application/json",
+  //       success: function(json) {
+  //         SearchCallback(json);
+  //       },
+  //       // error: function(jqXHR, textStatus, errorThrown) {
+  //       //   console.log(textStatus, errorThrown);
+  //       // }
+  //     });
+  //   }
+
+  //   function SearchCallback(json) {
+  //   $.each(json, function(i, item) {
+            
+  //     $('#wrapper').append('<div class="item" >' + item.user_id + item.memory_id + '<br/><img src="/assets/bookmark.png" /></div>'); 
+
+  //        $("img").error(function(){
+  //          $(this).hide();
+  //          }); 
+  //     });
+  //   };
+
+
+  // $(function() {
+
+  //   var searchTerms = "<%= @bookmarks %>";
+
+  //   CallURL(searchTerms);
+
+  // });
   
-
-
 </script>
 
 <div id="wrapper">
