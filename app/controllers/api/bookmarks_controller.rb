@@ -11,6 +11,7 @@ module API
       respond_with @bookmarks
     end
 
+
     def show
       @bookmark = Bookmark.where(id: params[:id])
       respond_with @bookmark
