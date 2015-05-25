@@ -1,48 +1,46 @@
-if logged in...
-
-
-This is our user's bookmark page
+<h4 style="text-align:center">Bookmarks</h4>
+</br>
 
 <% @user_id = @current_user.id %>
 
 <script>
 
-  // function CallURL(searchTerms){
-  //   var url = "http://api.localhost.com:3000/bookmarks/";
+  function CallURL(searchTerms){
+    var url = "http://api.localhost.com:3000/bookmarks/";
 
-  //     $.ajax({     
-  //       type: "GET",
-  //       url: url,
-  //       data: { user_id: searchTerms },
-  //       contentType: "application/json",
-  //       success: function(json) {
-  //         SearchCallback(json);
-  //       },
-  //       // error: function(jqXHR, textStatus, errorThrown) {
-  //       //   console.log(textStatus, errorThrown);
-  //       // }
-  //     });
-  //   }
+      $.ajax({     
+        type: "GET",
+        url: url,
+        data: { user_id: searchTerms },
+        contentType: "application/json",
+        success: function(json) {
+          SearchCallback(json);
+        },
+        // error: function(jqXHR, textStatus, errorThrown) {
+        //   console.log(textStatus, errorThrown);
+        // }
+      });
+    }
 
-  //   function SearchCallback(json) {
-  //   $.each(json, function(i, item) {
+    function SearchCallback(json) {
+    $.each(json, function(i, item) {
             
-  //     $('#wrapper').append('<div class="item" >' + item.user_id + item.memory_id + '<br/><img src="/assets/bookmark.png" /></div>'); 
+      $('#wrapper').append('<div class="item" >' + item.user_id + item.memory_id + '<br/><img class="bookmark-image" src="/assets/bookmark.png" /></div>'); 
 
-  //        $("img").error(function(){
-  //          $(this).hide();
-  //          }); 
-  //     });
-  //   };
+         $("img").error(function(){
+           $(this).hide();
+           }); 
+      });
+    };
 
 
-  // $(function() {
+  $(function() {
 
-  //   var searchTerms = "<%= @bookmarks %>";
+    var searchTerms = "<%= @bookmarks %>";
+    console.log(searchTerms)
+    CallURL(searchTerms);
 
-  //   CallURL(searchTerms);
-
-  // });
+  });
   
 </script>
 
