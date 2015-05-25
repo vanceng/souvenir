@@ -3,8 +3,9 @@ module API
   respond_to :json
 
     def index
-
-      if params[:user_id] && params[:search]
+      if params[:id]
+         @memories = Memory.where(id: params[:id])
+      elsif params[:user_id] && params[:search]
         @memories = Memory.where(user_id: params[:user_id], city: params[:search])
       elsif params[:user_id]
         @memories = Memory.where(user_id: params[:user_id])
@@ -26,8 +27,9 @@ module API
     end
 
     def create
+      @test = "success"
       @memory = Memory.create(memory_params)
-      respond_with @memory 
+      respond_with @test 
     end
 
     def update

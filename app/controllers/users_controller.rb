@@ -1,13 +1,18 @@
 class UsersController < ApplicationController
  
+# def current_user
+#   return unless session[:user_id]
+#   @current_user ||= User.find(session[:user_id])
+# end
+ 
   def create
     @user = User.new(user_params)
-
     if @user.save
       session[:user_id] = @user.id
-      redirect_to memories_path
+      redirect_to root_path
     else
       render :new
+      redirect_to search_path
     end
   end
 
@@ -27,4 +32,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :website, :twitter, :facebook, :biography, :profile_photo, :image)
   end
+
+
 end

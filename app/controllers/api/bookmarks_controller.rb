@@ -3,10 +3,11 @@ module API
   respond_to :json
   
     def index
-      @bookmarks = Bookmark.all
-      # respond_to do |format|
-      #   format.json { @bookmarks.to_json }
-      # end
+      if params[:user_id]
+        @bookmarks = Bookmark.where(user_id: params[:user_id])
+      else
+        @bookmarks = Bookmark.all
+      end
       respond_with @bookmarks
     end
 
