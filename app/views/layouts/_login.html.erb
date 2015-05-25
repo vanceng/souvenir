@@ -18,15 +18,73 @@
         <div><%= submit_tag "Log In" %></div>
       <% end %>
 
-  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
+  <p><a href="#" data-reveal-id="secondModal" class="secondary button">Sign Up</a></p>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
 
 <div id="secondModal" class="reveal-modal" data-reveal aria-labelledby="secondModalTitle" aria-hidden="true" role="dialog">
   <h2 id="secondModalTitle">This is a second modal.</h2>
   <p>See? It just slides into place after the other first modal. Very handy when you need subsequent dialogs, or when a modal option impacts or requires another decision.</p>
+
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div>
+
+  <%= form_for :user, url: users_path, action: "post" do |f| %>
+
+    <div>
+      <%= f.label :first_name, "First Name" %>
+      <%= f.text_field :first_name %>
+    </div><br>
+
+    <div>
+      <%= f.label :last_name, "Last Name" %><br>
+      <%= f.text_field :last_name %>
+    </div><br>
+
+    <div>
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div><br>
+
+    <div>
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+    </div><br>
+
+    <div>
+      <%= f.label :website %><br>
+      <%= f.text_field :website %>
+    </div><br>
+
+    <div>
+      <%= f.label :facebook, "Facebook" %><br>
+      <%= f.text_field :facebook %>
+    </div><br>
+
+    <div>
+      <%= f.label :twitter, "Twitter" %><br>
+      <%= f.text_field :twitter %>
+    </div><br>
+
+    <div>
+      <%= f.label :biography, "Biography" %><br>
+      <%= f.text_field :biography %><br>
+    </div><br>
+
+    <div>
+      <%= f.file_field :image %><br><br>
+    </div>
+
+    <div>
+      <%= f.label :remote_image_url, "Profile Photo" %><br>
+      <%= f.text_field :remote_image_url %>
+    </div><br>
+
+    <div>
+    <%= f.submit "submit" %>
+    </div><br>
+
+  <% end %>
+
 <!-- Reveal Modals end -->
 
 

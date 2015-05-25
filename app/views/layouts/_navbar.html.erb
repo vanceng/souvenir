@@ -5,9 +5,22 @@
         <ul class="left">
           <a href="#"data-options="align:right" data-dropdown="drop"><img class="menu-image" src="/assets/menu.svg" /></a>
           <ul id="drop" class="large f-dropdown" data-dropdown-content>
-            <li><a href="#" data-reveal-id="loginModal" class="radius button">Sign In/Up</a></li>
-            <li><a href="#">Sign Out</a></li>
+          
             <li><a href="/">Home</a></li>
+
+            <% if !current_user %>
+              <li><a href="#" data-reveal-id="loginModal">Sign In</a></li>
+            <% end %>
+            
+            <% if current_user %>
+              <li>   
+                <%= link_to "My Bookmarks", user_bookmarks_path(current_user) %> </li>
+              </li>
+              <li>   
+                <%= link_to "Sign Out", session_path(current_user), method: :delete %> </li>
+              </li>
+            <% end %>
+
           </ul>
         </ul>
     </div>
@@ -21,7 +34,9 @@
         <%#= current_user.full_name %> 
       <%# end %>
 
+    <% if current_user %>
       <a href="#" id= "memory_icon" href="#" data-reveal-id="memoryModal"><img class="create-image" src="/assets/create.svg" /></a>
+    <% end %>
 
     </div>
 

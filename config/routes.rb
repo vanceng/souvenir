@@ -16,11 +16,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, only: [:show, :create] 
+  resources :users, only: [:show, :create] do 
+    resources :bookmarks, only: [:index]
+  end
 
   resources :home, only: [:index, :show]
 
-  resources :bookmarks, only: [:index]
+  
 
   get '/search', to: "home#show"
 

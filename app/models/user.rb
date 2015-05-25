@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :memories
   has_many :bookmarks
   has_many :bookmarked_memories, through: :bookmarks, class_name: "Memory"
+  has_many :memories, through: :bookmarked_memories
 
   mount_uploader :image, ImageUploader
 

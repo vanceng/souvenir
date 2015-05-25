@@ -1,31 +1,53 @@
 <h4 style="text-align:center">Bookmarks</h4>
 </br>
 
-<% @user_id = @current_user.id %>
+<% @user_id = params[:user_id] %>
 
 <script>
 
   function CallURL(searchTerms){
-    var url = "http://api.localhost.com:3000/bookmarks/";
+    var url = "http://api.localhost.com:3000/bookmarks";
 
-      $.ajax({     
-        type: "GET",
-        url: url,
-        data: { user_id: searchTerms },
-        contentType: "application/json",
-        success: function(json) {
-          SearchCallback(json);
-        },
-        // error: function(jqXHR, textStatus, errorThrown) {
-        //   console.log(textStatus, errorThrown);
-        // }
+    $.ajax({     
+      type: "GET",
+      url: url,
+      data: { user_id: searchTerms },
+      contentType: "application/json",
+      success: function(json) {
+        $.each(json, function(i, item) {        
+          searchMemories = item.memory_id;
+          MemorySearch(searchMemories);
       });
-    }
+      },
+      // error: function(jqXHR, textStatus, errorThrown) {
+      //   console.log(textStatus, errorThrown);
+      // }
+    });
+  }
+
+  function MemorySearch(searchMemories){
+    var url = "http://api.localhost.com:3000/memories";
+   $.ajax({     
+      type: "GET",
+      url: url,
+      data: { id: searchMemories},
+      contentType: "application/json",
+      success: function(json) {
+        console.log(json);
+        SearchCallback(json);
+      },
+      // error: function(jqXHR, textStatus, errorThrown) {
+      //   console.log(textStatus, errorThrown);
+      // }
+    });
+  }
 
     function SearchCallback(json) {
     $.each(json, function(i, item) {
+      console.log(item);
             
-      $('#wrapper').append('<div class="item" >' + item.user_id + item.memory_id + '<br/><img class="bookmark-image" src="/assets/bookmark.png" /></div>'); 
+       $('#wrapper').append('<div class="item" >' + (moment(item.created_at).format("MMM Do YYYY")) + "<br/><h6>" + item.latitude + ', ' + item.longitude + " | " +(moment(item.created_at).format("h:mm a")) + ' | ' + item.category + '</h6>' + item.description + '</div>'); 
+
 
          $("img").error(function(){
            $(this).hide();
@@ -36,8 +58,7 @@
 
   $(function() {
 
-    var searchTerms = "<%= @bookmarks %>";
-    console.log(searchTerms)
+    var searchTerms = "<%= @user_id %>";
     CallURL(searchTerms);
 
   });

@@ -3,7 +3,6 @@ class BookmarksController < ApplicationController
   before_filter :require_login
   
   def index
-    @bookmarks = params[user_id: @current_user.id]
     render "index"
   end
 
