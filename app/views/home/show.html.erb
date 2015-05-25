@@ -17,6 +17,7 @@
         type: "GET",
         url: url,
         data: { search: searchTerms },
+        debugger
         contentType: "application/json",
         success: function(json) {
           SearchCallback(json);
