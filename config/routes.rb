@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   constraints subdomain: 'api' do
     namespace :api, path: '/', defaults: {format: :json} do
-      resources :memories, only: [:index]
+      resources :memories
       resources :bookmarks, only: [:index, :create, :destroy]
       resources :users, only: [:show, :update] do
         resources :memories, only: [:index, :create, :update, :destroy]
@@ -20,7 +20,9 @@ Rails.application.routes.draw do
 
   resources :home, only: [:index, :show]
 
-  resources :bookmarks, only: [:index]
+  resources :bookmarks, only: [:index, ]
+
+  resources :memories, only: [:show]  
 
   get '/search', to: "home#show"
 
