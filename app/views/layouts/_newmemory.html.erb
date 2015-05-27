@@ -1,6 +1,7 @@
 <!-- MODAL WINDOW -->    
 <% if current_user %>
 
+
   <div id="memoryModal" class="reveal-modal medium" data-reveal>
     <a class="close-reveal-modal" aria-label="Close">&#215;</a>
     
@@ -16,6 +17,7 @@
       
         $("#memory_icon").on('click', function() {
           navigator.geolocation.getCurrentPosition(set_coordinates);
+
 
           function set_coordinates(obj) {
             console.log(obj.coords.latitude);
@@ -70,7 +72,10 @@
   <div class="memory_create">
     <%= form_for :memory do |f| %>
 
+
     <!--   <h4 id= "notice-header">Please enter your Souvenir details:</h4> -->
+
+      <h4 id= "notice-header">Hey There! What's your Memory</h4>
 
       <div>
         <%= f.label :title, "TITLE:", class: 'modal-form-control' %>

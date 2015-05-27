@@ -16,9 +16,13 @@ Rails.application.routes.draw do
     end
   end
 
+<<<<<<< HEAD
   resources :users, only: [:show, :create] do 
     resources :bookmarks, only: [:index]
   end
+=======
+  resources :users, only: [:show, :create] 
+>>>>>>> 5f66ed1c07c69f7499c4bef271f29a90da9a8636
 
   resources :home, only: [:index, :show]
 

@@ -3,9 +3,14 @@ module API
   respond_to :json
 
     def index
+<<<<<<< HEAD
       if params[:id]
          @memories = Memory.where(id: params[:id])
       elsif params[:user_id] && params[:search]
+=======
+
+      if params[:user_id] && params[:search]
+>>>>>>> 5f66ed1c07c69f7499c4bef271f29a90da9a8636
         @memories = Memory.where(user_id: params[:user_id], city: params[:search])
       elsif params[:user_id] && params[:city]
         @memories = Memory.where(user_id: params[:user_id], city: params[:city])
