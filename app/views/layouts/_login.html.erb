@@ -29,46 +29,47 @@
 
   <%= form_for :user, url: users_path, action: "post" do |f| %>
 
-    <div>
-      <%= f.label :first_name, "FIRST NAME", class: 'modal-form-control' %>
-      <%= f.text_field :first_name, class: 'modal-form-control' %>
+    <div class="modal-form-control">
+      <%= f.label :first_name, "FIRST NAME" %>
+      <%= f.text_field :first_name %>
     </div>
 
-    <div>
-      <%= f.label :last_name, "LAST NAME", class: 'modal-form-control' %>
-      <%= f.text_field :last_name, class: 'modal-form-control' %>
+    <div class="modal-form-control">
+      <%= f.label :last_name, "LAST NAME" %>
+      <%= f.text_field :last_name %>
     </div>
 
-    <div>
-      <%= f.label :email, "EMAIL:", class: 'modal-form-control' %>
-      <%= f.text_field :email, class: 'modal-form-control' %>
+    <div class="modal-form-control">
+      <%= f.label :email, "EMAIL:"%>
+      <%= f.text_field :email%>
     </div>
 
-    <div>
-      <%= f.label :password, "PASSWORD:", class: 'modal-form-control' %>
-      <%= f.password_field :password, class: 'modal-form-control' %>
+    <div class="modal-form-control">
+      <%= f.label :password, "PASSWORD:"%>
+      <%= f.password_field :password %>
     </div>
 
-    <div>
-      <%= f.label :website, "WEBSITE:", class: 'modal-form-control' %>
-      <%= f.text_field :website, class: 'modal-form-control' %>
+    <div class="modal-form-control">
+      <%= f.label :website, "WEBSITE:" %>
+      <%= f.text_field :website %>
     </div>
 
-    <div>
-      <%= f.label :biography, "BIOGRAPHY:", class: 'modal-form-control' %>
-      <%= f.text_field :biography, class: 'modal-form-control' %>
+    <div class="modal-form-control">
+      <%= f.label :biography, "BIOGRAPHY:" %>
+      <%= f.text_field :biography %>
     </div>
-
-    <div>
-      <%= f.label :profile_photo, "UPLOAD PROFILE PHOTO:", class: 'modal-form-control' %>
-      <%= f.file_field :profile_photo, class: 'modal-form-control' %>
+<!-- 
+    <div class="modal-form-control">
+      <%= f.label :profile_photo, "UPLOAD PROFILE PHOTO:" %>
+      <%= f.file_field :profile_photo %>
     </div>
-
+ -->
     <div>
-    <%= f.submit "SIGN UP", class: "secondary button" %>
+    <%= f.submit "SIGN UP" %>
     </div>
 
   <% end %>
+</div>
 
 <!-- Reveal Modals end -->
 

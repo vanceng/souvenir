@@ -11,7 +11,6 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      render :new
       redirect_to search_path
     end
   end
