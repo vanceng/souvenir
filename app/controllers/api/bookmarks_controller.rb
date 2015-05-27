@@ -5,6 +5,8 @@ module API
     def index
       if params[:user_id]
         @bookmarks = Bookmark.where(user_id: params[:user_id])
+      elsif params[:user_id] && params[:city]
+        @memories = Memory.where(user_id: params[:user_id], city: params[:search])
       else
         @bookmarks = Bookmark.all
       end

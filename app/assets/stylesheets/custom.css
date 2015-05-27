@@ -182,3 +182,77 @@
   margin-right: auto;
   width: 30px;
 }
+
+.modaldetailsheader{
+  text-align: center;
+  font-family: quicksand;
+}
+
+.modal-form-control{
+  text-align: center;
+  font-family: quicksand;
+}
+
+::-webkit-input-placeholder {
+  text-align: center;
+  font-family: quicksand;
+  color: black;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  text-align: center;
+  font-family: quicksand;
+  color: black;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  text-align: center;
+  font-family: quicksand; 
+  color: black;
+}
+
+:-ms-input-placeholder {  
+  text-align: center;
+  font-family: quicksand; 
+}
+
+#memory-submit{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+input[type="file"]{
+  color: black;
+  text-align: center;
+  font-family: quicksand;
+}
+
+input#memory_media_url{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  text-align: center;
+  font-family: quicksand;
+}
+
+button.secondary, .button.secondary{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: quicksand;
+}
+
+.button.new_user{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-family: quicksand;
+}
+
+#search-submit{
+  text-align: center;
+  font-family: quicksand;
+}

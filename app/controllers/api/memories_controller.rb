@@ -7,6 +7,8 @@ module API
          @memories = Memory.where(id: params[:id])
       elsif params[:user_id] && params[:search]
         @memories = Memory.where(user_id: params[:user_id], city: params[:search])
+      elsif params[:user_id] && params[:city]
+        @memories = Memory.where(user_id: params[:user_id], city: params[:city])
       elsif params[:user_id]
         @memories = Memory.where(user_id: params[:user_id])
       elsif params[:search]
