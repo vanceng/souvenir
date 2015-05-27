@@ -84197,3 +84197,10 @@ Processing by HomeController#index as HTML
   Rendered layouts/_newmemory.html.erb (5.5ms)
   Rendered layouts/_login.html.erb (3.6ms)
 Completed 200 OK in 3514ms (Views: 3512.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/bookmarks?user_id=1" for 10.0.2.2 at 2015-05-27 01:37:47 +0000
+Processing by API::BookmarksController#index as JSON
+  Parameters: {"user_id"=>"1", "subdomain"=>"api", "bookmark"=>{}}
+  [1m[35mBookmark Load (0.6ms)[0m  SELECT "bookmarks".* FROM "bookmarks"  WHERE "bookmarks"."user_id" = 1
+Completed 200 OK in 62ms (Views: 2.6ms | ActiveRecord: 0.6ms)
