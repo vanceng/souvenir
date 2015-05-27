@@ -2,16 +2,41 @@
 </br>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <% @user_id = params[:user_id] %>
 =======
-
-This is our user's bookmark page
-
-<% user_id = @current_user.id %>
->>>>>>> 5f66ed1c07c69f7499c4bef271f29a90da9a8636
+=======
+<% @user_id = params[:user_id] %>
+>>>>>>> 814fa8868954ec7d0b4678da5f0f2faf8c9aa8ec
 
 <script>
 
+<<<<<<< HEAD
+<% user_id = @current_user.id %>
+>>>>>>> 5f66ed1c07c69f7499c4bef271f29a90da9a8636
+=======
+  function CallURL(searchTerms){
+    var url = "http://api.localhost.com:3000/bookmarks";
+>>>>>>> 814fa8868954ec7d0b4678da5f0f2faf8c9aa8ec
+
+    $.ajax({     
+      type: "GET",
+      url: url,
+      data: { user_id: searchTerms },
+      contentType: "application/json",
+      success: function(json) {
+        $.each(json, function(i, item) {        
+          searchMemories = item.memory_id;
+          MemorySearch(searchMemories);
+      });
+      },
+      // error: function(jqXHR, textStatus, errorThrown) {
+      //   console.log(textStatus, errorThrown);
+      // }
+    });
+  }
+
+<<<<<<< HEAD
   function CallURL(searchTerms){
     var url = "http://api.localhost.com:3000/bookmarks";
 
@@ -32,6 +57,8 @@ This is our user's bookmark page
     });
   }
 
+=======
+>>>>>>> 814fa8868954ec7d0b4678da5f0f2faf8c9aa8ec
   function CallCity(searchTerms){
     var url = "http://api.localhost.com:3000/bookmarks";
 

@@ -10,7 +10,8 @@ User.destroy_all
   User.create!(first_name: "Vance", last_name: "Ng", email: "vance@vance.com", password: "password", website: "www.vanceng.com", twitter: "@vanceng", facebook: "www.facebook.com/vanceng", biography: "Coffee is my drug of choice!" , profile_photo: "https://scontent-sea.xx.fbcdn.net/hphotos-xap1/v/t1.0-9/1157430_10153132528690587_1256072416_n.jpg?oh=7a527d3ef9df30098c3a5d38e624b0a7&oe=55CA32E0")
   User.create!(first_name: "Sakthi", last_name: "Pravag", email: "sakthi@sakthi.com", password: "password", website: "www.sakthipravag.com", twitter: "@sakthipravag", facebook: "www.facebook.com/sakthipravag", biography: "Can't wait to see the rest of the world." , profile_photo: "https://avatars.githubusercontent.com/u/11703030?v=3")
 
-Memory.destroy_all 
+Memory.destroy_all
+
   Memory.create!(user_id: 1,city: "vancouver", description: "The Steamclock rings on the hour. An icon of Gastown.", category: "landmark", latitude: 49.284436, longitude: -123.108896)
   Memory.create!(user_id: 1,city: "Vancouver", description: "This Coffee was one of the best I ever had.", category: "food",  latitude: 49.283915, longitude: -123.109554)
   Memory.create!(user_id: 1,city: "Vancouver",description: "Walking in Lynn canyon felt like I was in a land forgotten by time.", category: "nature", latitude: 49.339074, longitude: -123.018063)
