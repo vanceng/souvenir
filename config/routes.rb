@@ -10,11 +10,13 @@ Rails.application.routes.draw do
       resources :memories
       resources :bookmarks, only: [:index, :create, :destroy]
       resources :users, only: [:show, :update] do
-        resources :memories, only: [:index, :create, :update, :destroy]
+        resources :memories, only: [:index, :show, :create, :update, :destroy]
       end 
       resources :sessions, only: [:new, :create, :destroy]
     end
   end
+
+
 
   resources :users, only: [:show, :create] 
 

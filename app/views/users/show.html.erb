@@ -17,7 +17,9 @@
 <!-- This JS executes the JS to get the Memories Tiles on the Left -->
 <script>
   $( function() {
-    getUserMemories();
+    getUserMemories(e, function() {
+      displayMemoryMarker();
+    )};
   });
 
 
@@ -32,7 +34,6 @@
 
 <!-- This JS displays the User's Memories Tiles on the Left -->
 <script> 
-
   var userId = <%= params[:id] %>
 
   function getUserMemories() {
@@ -100,6 +101,14 @@
   function editMemoryFunc(memoryId) {
     console.log(memoryId);
   }
-
-
 </script>
+
+
+<!-- This creates the Map on the right -->
+
+<div class="map_rightdisplay">
+
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+
+
+</div>
