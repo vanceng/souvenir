@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   has_many :bookmarks
   has_many :bookmarked_memories, through: :bookmarks, class_name: "Memory"
 
-  mount_uploader :image, ImageUploader
+  mount_uploader :profile_photo, ImageUploader
 
 
   has_secure_password
