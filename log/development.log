@@ -84169,3 +84169,17 @@ Processing by API::MemoriesController#index as JSON
   Parameters: {"id"=>"64", "subdomain"=>"api", "memory"=>{}}
   [1m[36mMemory Load (0.4ms)[0m  [1mSELECT "memories".* FROM "memories"  WHERE "memories"."id" = 64[0m
 Completed 200 OK in 64ms (Views: 2.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-05-27 00:53:13 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 20]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 20]]
+  Rendered home/index.html.erb within layouts/application (6.1ms)
+  Rendered layouts/_navbar.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 20]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 20]]
+  Rendered layouts/_newmemory.html.erb (5.4ms)
+  Rendered layouts/_login.html.erb (2.6ms)
+Completed 200 OK in 3671ms (Views: 3668.5ms | ActiveRecord: 0.4ms)
