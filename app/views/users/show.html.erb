@@ -7,8 +7,6 @@
   <h7> <%= @user.twitter %> <%= @user.facebook %> <%= @user.website %> </h7>
 </div>
 
-
-
 <!-- This is the Markup for the Memories Tiles on the Left-->
 <div class = "memories-leftdisplay" data-user-id="<%= params[:id] %>">
   <div id = "memory-list"></div>
@@ -89,7 +87,7 @@
     data: {"_method": "delete"},
     success: function(data) {
       var deletedItem = $("#memory-tile" + memoryId);
-      deletedItem.delay(1000).fadeOut(800, function() {
+      deletedItem.delay(500).fadeOut(500, function() {
         deletedItem.remove();
       });
     },
