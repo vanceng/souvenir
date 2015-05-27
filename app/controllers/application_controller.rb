@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
 
   #Code is from Stackoverflow. May want to revisit it. http://stackoverflow.com/questions/23673040/override-the-protect-from-forgery-strategy-in-a-controller 
   def isWebRequest?
-    request.subdomains[-1] != 'api'
+    request.subdomains[-1] != 'api' 
   end
 
 

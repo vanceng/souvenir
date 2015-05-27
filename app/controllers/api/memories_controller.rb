@@ -25,13 +25,13 @@ module API
 
     def show
       @memory = Memory.find(params[:id])
-      respond_with @memories
+      respond_with @memory
     end
 
     def create
-      @test = "success"
       @memory = Memory.create(memory_params)
-      respond_with @test 
+      binding.pry
+      respond_with @memory 
     end
 
     def update
