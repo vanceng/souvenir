@@ -1,40 +1,34 @@
 <br><br>
-
+<div id="indeximage">
+<div id="searchfields">
 <form  id='search-form' action="/search" method="get"> 
   <div class="row">
     <div class="ten mobile-three columns">
       <input id="search-city" class="search-input"type="text" name="search" placeholder="Search Cities" />
     </div>
     <div class="two mobile-one columns">
-      <input id="search-submit" type="submit" value="SEARCH" class="button expand postfix" />
+      <input id="search-submit" type="submit" value="SEARCH" class="button secondary" />
     </div>
   </div>
 </form><br>
+</div>
+</div>
 
 
 <% if current_user %>
 
 
   <% @current_user =  User.find(session["user_id"]) %>
-
+  <h2 style="text-align: center; font-family: quicksand;"> CURATED SOUVENIRS </h2>
   <div class="curated_memories">
     <div class="item" >
-      <img name="bookmark-image" data-memory_id="' + item.id + '" data-user_id=<%= @current_user.id %> class="bookmark-image" src="/assets/bookmark.png" /> 
+      <img src="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xpf1/v/t1.0-9/10459875_10203602067325781_6580568833719525755_n.jpg?oh=712992d235ebd0ecc71c65f6b1ee791c&oe=560325CB" /> 
     </div>
     <div class="item" >
-      <img name="bookmark-image" data-memory_id="' + item.id + '" data-user_id=<%= @current_user.id %> class="bookmark-image" src="/assets/bookmark.png" /> 
+      <img src="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xfp1/v/t1.0-9/10984598_10203602011444384_7427991684964195941_n.jpg?oh=3eb5b4563e9f43674105c7c09703d4bb&oe=5603E517" /> 
     </div>
     <div class="item" >
-      <img name="bookmark-image" data-memory_id="' + item.id + '" data-user_id=<%= @current_user.id %> class="bookmark-image" src="/assets/bookmark.png" /> 
-    </div>
-    <div class="item" >
-      <img name="bookmark-image" data-memory_id="' + item.id + '" data-user_id=<%= @current_user.id %> class="bookmark-image" src="/assets/bookmark.png" /> 
-    </div>
-    <div class="item" >
-      <img name="bookmark-image" data-memory_id="' + item.id + '" data-user_id=<%= @current_user.id %> class="bookmark-image" src="/assets/bookmark.png" /> 
-    </div>
-    <div class="item" >
-      <img name="bookmark-image" data-memory_id="' + item.id + '" data-user_id=<%= @current_user.id %> class="bookmark-image" src="/assets/bookmark.png" /> 
+      <img src="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/11295695_10203602127767292_2318642011000696660_n.jpg?oh=d90fa531cc8fd0ed919349d395495d94&oe=55C536A3" /> 
     </div>
   </div>
 
@@ -45,7 +39,7 @@
 
   $(function() {
 
-    $.backstretch([
+    $("#indeximage").backstretch([
       "https://scontent-sea1-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/13399_10203570847985317_3233685133724634096_n.jpg?oh=ff76e942c36ceab1c694e3ee7b8dbf02&oe=5609EAE7",
       "https://scontent-sea1-1.xx.fbcdn.net/hphotos-xat1/v/l/t1.0-9/11148652_10203570847945316_6882202978588279856_n.jpg?oh=e05728bb82b257d7883f53aadd447ffb&oe=55C5AF02", 
       "https://scontent-sea1-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/11215058_10203570847905315_9103989941626003325_n.jpg?oh=dd872df363be95a2d6e965bb6292a13e&oe=560AE496"

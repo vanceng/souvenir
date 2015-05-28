@@ -1,4 +1,4 @@
-<h4 style="text-align:center">Bookmarks</h4>
+<h4 style="text-align:center; font-family:quicksand;">BOOKMARKS</h4>
 </br>
 
 
@@ -90,8 +90,8 @@
     $.each(json, function(i, item) {
       console.log(item);
             
-      $('#wrapper').append('<div class="item" >' + (moment(item.created_at).format("MMM Do YYYY")) + "<br/><h6>" + item.latitude + ', ' + item.longitude + " | " +(moment(item.created_at).format("h:mm a")) + ' | ' + item.category + '</h6>' + item.description + '</div>'); 
-      $('#citynav').append('<li><a href="#" class="citybutton" data-city_id="' + item.city + '">' + item.city + '</a></li>');
+      $('#wrapper').append('<div class="item ' + item.city +'" >' + (moment(item.created_at).format("MMM Do YYYY")) + "<br/><h6>" + item.latitude + ', ' + item.longitude + " | " +(moment(item.created_at).format("h:mm a")) + ' | ' + item.category + '</h6>' + item.description + '</div>'); 
+      $('#citynav').append('<li class="citybutton"><a href="#" data-city_id="' + item.city + '" data-filter="' + item.city + '">' + item.city + '</a></li>');
 
 
          $("img").error(function(){
@@ -105,29 +105,48 @@
 
     var searchTerms = "<%= @user_id %>";
     CallURL(searchTerms);
-
-    $("#citynav").on('click', ".citybutton", function(e) {
-      e.preventDefault();
-      citySearch = ($(this).attr("data-city_id"));
-      $("#wrapper").empty();
-      console.log(citySearch);
-      CallCity(searchTerms);
-    });
-
-  });
   
+    var $container = $('#wrapper'); 
+
+    $container.isotope({ 
+        filter: '*', 
+        animationOptions: { 
+            duration: 750, 
+            easing: 'linear', 
+            queue: false, 
+        } 
+    }); 
+
+
+    $('#citynav').on('click','.citybutton', function(e){
+      e.preventDefault();
+      $('#citynav .current').removeClass('current');
+      $(this).addClass('current');
+
+      var selector = $(this).children().data('filter');
+      console.log(selector);
+      $container.isotope({
+        filter: selector,
+        animationOptions: {
+          duration: 750,
+          easing: 'linear',
+          queue: false
+        }
+     });
+    });
+  });
 </script>
 
 <a href="#" class="button citymemories" data-options="align:bottom" data-dropdown="citynav" style="display: block;">CITIES</a>
-<ul id="citynav" id="citynav" class="medium f-dropdown" data-dropdown-content>
+<ul  id="citynav" class="medium f-dropdown" data-dropdown-content>
+  <li class="citybutton current">
+    <a href="#" data-city_id="*" data-filter=".*">All</a>
+    </li>
 </ul>
 
 <br/><br/>
 
 
 <div id="wrapper">
-  <div id="list">
-  </div>
+
 </div>
-
-

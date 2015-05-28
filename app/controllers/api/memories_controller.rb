@@ -31,7 +31,6 @@ module API
 
     def create
       @memory = Memory.create(memory_params)
-      binding.pry
       respond_with @memory 
     end
 
