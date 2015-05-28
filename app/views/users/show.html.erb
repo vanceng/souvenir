@@ -1,4 +1,9 @@
 <!-- This is the Markup for the User's Profile on the top-->
+<div class="map-rightdisplay">
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <div id="googleMap" class= "google_map"></div>
+</div>
+
 <div id = "user-profile">
   <img src = <%= @user.image %> >
   <h3> <%= @user.first_name.downcase %> <%= @user.last_name.downcase %></h3>
@@ -31,10 +36,7 @@
 </script>
 
 <!-- This JS displays the User's Memory Map on the Right -->
-<div class="map-rightdisplay">
-  <script src="http://maps.googleapis.com/maps/api/js"></script>
-  <div id="googleMap" class= "google_map"></div>
-</div>
+
 
 
 <!-- This JS displays the User's Memories Tiles on the Left -->
