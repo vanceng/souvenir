@@ -1,13 +1,17 @@
 
   function getUserMemories(userId) {
     var url = "http://api.localhost.com:3000/memories?user_id=" + userId ;
-          
+    
     $.ajax({     
       type: "GET",
       url: url,
       contentType: "application/json",
       success: function(data) {
-        displayUserMemories(data);
+        if(data.length > 0) {
+          displayUserMemories(data);
+        } else {
+          displayNoMemories();
+        }
       },
       error: function(jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);
@@ -15,6 +19,10 @@
     });
   }
 
+  function displayNoMemories(noData) {
+    var tile = $('#memory-list');
+    tile.append('<div class = "memory-tile">' + noMemoryInfo() + '</div></br>');
+  }
 
   // This is displaying the User's Edit Menu on each Memory Tile
 
@@ -36,14 +44,17 @@
   }
 
   function memoryInfo(item) {
-    return ' <h5>title: ' + item.id + '</h5><h6><a href = "https://www.google.com/maps?q&layer=c&cbll=' + item.latitude + ',' + item.longitude + '&cbp=11,0,0,0,0" target= "_blank">relive it</a></h6><div class= "memory-description"><h4>Description: ' + item.description + '</h4></div> <img id= "memory-image" src=' + '//gifrific.com/wp-content/uploads/2014/02/Michelle-Tanner-You-Got-it-Dude-Full-House.gif> ' + '</img> </div>';
+    return ' <h5>' + item.title + '</h5><h6><a href = "https://www.google.com/maps?q&layer=c&cbll=' + item.latitude + ',' + item.longitude + '&cbp=11,0,0,0,0" target= "_blank">relive it</a></h6><div class= "memory-description"><h4>"' + item.description + '"</h4></div> <img id= "memory-image" src=' + '//gifrific.com/wp-content/uploads/2014/02/Michelle-Tanner-You-Got-it-Dude-Full-House.gif> ' + '</div>';
+  }
+
+  function noMemoryInfo() {
+    return ' <h5>the moment is now</h5><div class= "memory-description"><h4>"create your first souvenir"</h4></div> <img id= "memory-image" src=' + '//gifrific.com/wp-content/uploads/2014/02/Michelle-Tanner-You-Got-it-Dude-Full-House.gif> ' + '</div>';
   }
 
   function deleteMemoryFunc(memoryId) {
 
     var url = "http://api.localhost.com:3000/users/" + userId + "/memories/" + memoryId;
    
-    console.log(memoryId);
     $.ajax({   
     url: url,  
     type: "post",
@@ -59,9 +70,5 @@
       console.log(textStatus, errorThrown);
     }
     });
-  }
-
-  function editMemoryFunc(memoryId) {
-    console.log(memoryId);
   }
 

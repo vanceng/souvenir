@@ -22,13 +22,14 @@
 
     var mapProp = {
       center: new google.maps.LatLng(49.282022399999995, -123.108199),
-      zoom: 25,
+      zoom: 15,
       mapTypeId:google.maps.MapTypeId.ROADMAP,
       styles: styles
     };
     map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-    
+
     var userId = <%= params[:id] %>
+
     getUserMemories(userId);
 
   });
