@@ -61,13 +61,13 @@
   height: 50%;
 }
 
-.map_rightdisplay{
+.map-rightdisplay{
   width: 50%;
   float: right;
   position: fixed;
   top: 50px;
   right: 0;
-  padding-top: 10px;
+  padding-top: 103px;
   height: 50%;
 }
 
@@ -115,23 +115,54 @@
 
 .memory-tile {
   padding: 2.5%;
-  background: #e2e0e2;
-  width: 90% auto;
+  background: #F3F3F3;
+  width: 25em;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: quicksand;
 }
+
+  .memory-tile {
+    font-size: ;
+  }
 
 #memory-image {
   display: table;
   margin: 0 auto;
 }
 
-#memory-description {
+.memory-description {
   color: red;
   text-align: center;
   padding: 20px 5%;
+  font-family: raleway;
 }
+
+  .memory-description h4 {
+    font-family: raleway;
+    font-size: 1.5em;
+    margin-top: 0.9em;
+    margin-bottom: 1.6em;
+
+  }
+
+  .memory-tile h5 {
+    margin-bottom: -0.05em;
+    font-size: 1.25em;
+    font-family: quicksand;
+    color: #ff941c;
+  }
+
+  .memory-tile h6 {
+    font-size: .8em;
+    font-family: quicksand;
+  }
+
 
 #user-profile {
   text-align: center;
+  font-family: quicksand;
+
 }
 
 
