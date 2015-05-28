@@ -1,10 +1,10 @@
 <!-- This is the Markup for the User's Profile on the top-->
 
-<div id = "user-profile">
+<div id = "user-profile" style="text-align: center; font-family: quicksand;">
   <img src = <%= @user.image %> >
-  <h3> <%= @user.first_name %> <%= @user.last_name %></h3>
-  <h5> <%= @user.biography %> </h5>
-  <h7> <%= @user.twitter %> <%= @user.facebook %> <%= @user.website %> </h7>
+  <h3 style="text-align: center; font-family: quicksand;"> <%= @user.first_name %> <%= @user.last_name %></h3>
+  <h5 style="text-align: center; font-family: quicksand;"> <%= @user.biography %> </h5>
+  <a href="<%= @user.website %>"><img style="width:30px;height:30px;" src="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xfa1/v/t1.0-9/549234_10203606833364929_6514952005608737757_n.jpg?oh=e397ed0edacc3d61caacf649c2a00d81&oe=560985CA"<%= @user.website %> </a>
 </div>
 
 <!-- This is the Markup for the Memories Tiles on the Left-->
@@ -63,7 +63,7 @@
 
   function editMenu(item) {
     var memoryId = item.id; 
-    return '<div id = "memories-edit-menu"><a class = "memories-menu" href="#" data-dropdown="hover' + memoryId + '" data-options="is_hover:true; hover_timeout:5000">edit menu</a> <ul id="hover' + memoryId + '" class="f-dropdown" data-dropdown-content> \
+    return '<div id = "memories-edit-menu"><a class = "memories-menu" href="#" data-dropdown="hover' + memoryId + '" data-options="is_hover:true; hover_timeout:5000"><img style="height:30px;" src="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/11350476_10203606858285552_4607544695474497670_n.jpg?oh=23a86298f989ccf9f4c0e9bde28d6e20&oe=55EF662A"></a> <ul id="hover' + memoryId + '" class="f-dropdown" data-dropdown-content> \
         <li><a href="#" onclick= "event.preventDefault(); editMemoryFunc(' + memoryId + ');">Edit</a></li> \
         <li><a href="#" onclick= "event.preventDefault(); deleteMemoryFunc(' + memoryId + ');">Delete</a></li> <li> \
         <a href="#">Make Private</a></li> \

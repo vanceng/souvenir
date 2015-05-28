@@ -7,14 +7,21 @@ class SessionsController < ApplicationController
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path, notice: "Welcome back, #{user.first_name}!"
+      flash[:success] = "Welcome back, #{user.first_name}!"
+      redirect_to root_path
+    elsif user.nil
+      flash[:error] = "Login failed, but failures are a measure of success in life so try again. Unless you're a hacker, stop now!"
+      redirect_to root_path       
     else
-      flash.now[:alert] = "Log in failed..."
+      flash[:error] = "Login failed, but failures are a measure of success in life so try again. Unless you're a hacker, stop now!"
+      redirect_to root_path 
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "Adios!"
+    flash[:success] = "Bye!"
+    redirect_to root_path
+    # redirect_to root_path, notice: "Adios!"
   end
 end

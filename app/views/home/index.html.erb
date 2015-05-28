@@ -4,18 +4,16 @@
 <form  id='search-form' action="/search" method="get"> 
   <div class="row">
     <div class="ten mobile-three columns">
-      <input id="search-city" class="search-input"type="text" name="search" placeholder="Search Cities" />
+      <input id="search-city" class="search-input"type="text" name="search" placeholder="search a city" />
     </div>
     <div class="two mobile-one columns">
-      <input id="search-submit" type="submit" value="SEARCH" class="button secondary" />
+      <input id="search-submit" type="submit" value="EXPLORE" class="button secondary" />
     </div>
   </div>
 </form><br>
 </div>
 </div>
 
-
-<% if current_user %>
 
 
   <% @current_user =  User.find(session["user_id"]) %>
@@ -31,8 +29,6 @@
       <img src="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xta1/v/t1.0-9/11295695_10203602127767292_2318642011000696660_n.jpg?oh=d90fa531cc8fd0ed919349d395495d94&oe=55C536A3" /> 
     </div>
   </div>
-
-<% end %>
 
 
 <script>

@@ -6,7 +6,7 @@
           <a href="#"data-options="align:right" data-dropdown="drop"><img class="menu-image" src="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xpa1/v/t1.0-9/19694_10203592164238210_1396540413212103091_n.jpg?oh=4e582a85f970d1f8c0dc68ed64292c2c&oe=560972BF" /></a>
           <ul id="drop" class="large f-dropdown" data-dropdown-content>
           
-            <li><a href="/">Home</a></li>
+            <li><a href="/">explore</a></li>
 
             <% if !current_user %>
               <li><a href="#" data-reveal-id="loginModal">Sign In</a></li>
@@ -14,13 +14,13 @@
             
             <% if current_user %>
               <li>   
-                <%= link_to "My Souvenirs", user_path(current_user)%> 
+                <%= link_to "my souvenirs", user_path(current_user)%> 
               </li>
               <li>   
-                <%= link_to "My Bookmarks", user_bookmarks_path(current_user) %> 
+                <%= link_to "my bookmarks", user_bookmarks_path(current_user) %> 
               </li>
               <li>   
-                <%= link_to "Sign Out", session_path(current_user), method: :delete %>
+                <%= link_to "sign out", session_path(current_user), method: :delete %>
 
               </li>
             <% end %>
