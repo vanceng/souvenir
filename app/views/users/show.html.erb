@@ -1,4 +1,8 @@
 <!-- This is the Markup for the User's Profile on the top-->
+<div class="map-rightdisplay">
+  <script src="http://maps.googleapis.com/maps/api/js"></script>
+  <div id="googleMap" class= "google_map"></div>
+</div>
 
 <div id = "user-profile" style="text-align: center; font-family: quicksand;">
   <img src = <%= @user.image %> >
@@ -12,94 +16,12 @@
   <div id = "memory-list"></div>
 </div>
 
-
-
 <!-- This JS executes the JS to get the Memories Tiles on the Left -->
+<%= javascript_include_tag "memoryGenerator" %>
+
 <script>
   $( function() {
-    getUserMemories();
+    var userId = <%= params[:id] %>
+    getUserMemories(userId);
   });
-
-
-</script>
-
-<!-- This JS displays the User's Memory Map on the Right -->
-<div class="map_rightdisplay">
-  <script src="http://maps.googleapis.com/maps/api/js"></script>
-  <div id="googleMap" class= "google_map"></div>
-</div>
-
-
-<!-- This JS displays the User's Memories Tiles on the Left -->
-<script> 
-
-  var userId = <%= params[:id] %>
-
-  function getUserMemories() {
-    var url = "http://api.localhost.com:3000/memories?user_id=" + userId ;
-          
-    $.ajax({     
-      type: "GET",
-      url: url,
-      contentType: "application/json",
-      success: function(data) {
-        displayUserMemories(data);
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.log(textStatus, errorThrown);
-      }
-    });
-  }
-
-
-  // This is displaying the User's Edit Menu on each Memory Tile
-
-  function displayUserMemories(data) {
-    var tile = $('#memory-list');
-    $.each(data, function(i, item) {
-      tile.append('<div class = "memory-tile" id = "memory-tile' + item.id + '">' + editMenu(item) + memoryInfo(item) + '</div></br>');
-    });
-  }
-
-  function editMenu(item) {
-    var memoryId = item.id; 
-    return '<div id = "memories-edit-menu"><a class = "memories-menu" href="#" data-dropdown="hover' + memoryId + '" data-options="is_hover:true; hover_timeout:5000"><img style="height:30px;" src="https://scontent-sea1-1.xx.fbcdn.net/hphotos-xtf1/v/t1.0-9/11350476_10203606858285552_4607544695474497670_n.jpg?oh=23a86298f989ccf9f4c0e9bde28d6e20&oe=55EF662A"></a> <ul id="hover' + memoryId + '" class="f-dropdown" data-dropdown-content> \
-        <li><a href="#" onclick= "event.preventDefault(); editMemoryFunc(' + memoryId + ');">Edit</a></li> \
-        <li><a href="#" onclick= "event.preventDefault(); deleteMemoryFunc(' + memoryId + ');">Delete</a></li> <li> \
-        <a href="#">Make Private</a></li> \
-      </ul></div>';
-  }
-
-
-  function memoryInfo(item) {
-    return ' <h5>title: ' + item.id + '</h5><h9>at ' + item.longitude + ', ' + item.latitude + '</h9><div id= "memory-description"><h4>Description: ' + item.description + '</h4></div> <img id= "memory-image" src=' + '//gifrific.com/wp-content/uploads/2014/02/Michelle-Tanner-You-Got-it-Dude-Full-House.gif> ' + '</img> </div>';
-  }
-
-  function deleteMemoryFunc(memoryId) {
-
-    var url = "http://api.localhost.com:3000/users/" + userId + "/memories/" + memoryId;
-   
-    console.log(memoryId);
-    $.ajax({   
-    url: url,  
-    type: "post",
-    dataType: "json",
-    data: {"_method": "delete"},
-    success: function(data) {
-      var deletedItem = $("#memory-tile" + memoryId);
-      deletedItem.delay(500).fadeOut(500, function() {
-        deletedItem.remove();
-      });
-    },
-    error: function(jqXHR, textStatus, errorThrown) {
-      console.log(textStatus, errorThrown);
-    }
-    });
-  }
-
-  function editMemoryFunc(memoryId) {
-    console.log(memoryId);
-  }
-
-
 </script>
