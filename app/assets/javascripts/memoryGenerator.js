@@ -2,6 +2,15 @@
   function getUserMemories(userId) {
     var url = "http://api.localhost.com:3000/memories?user_id=" + userId ;
     
+    var mapProp = {
+    center: new google.maps.LatLng(49.282022399999995, -123.108199),
+    zoom: 20,
+    mapTypeId:google.maps.MapTypeId.ROADMAP,
+    styles: styles
+    };
+    map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+
     $.ajax({     
       type: "GET",
       url: url,
@@ -44,7 +53,7 @@
   }
 
   function memoryInfo(item) {
-    return ' <h5>' + item.title + '</h5><h6><a href = "https://www.google.com/maps?q&layer=c&cbll=' + item.latitude + ',' + item.longitude + '&cbp=11,0,0,0,0" target= "_blank">relive it</a></h6><div class= "memory-description"><h4>"' + item.description + '"</h4></div> <img id= "memory-image" src=' + '//gifrific.com/wp-content/uploads/2014/02/Michelle-Tanner-You-Got-it-Dude-Full-House.gif> ' + '</div>';
+    return ' <h5>' + item.title + '</h5><h6><a href = "https://www.google.com/maps?q&layer=c&cbll=' + item.latitude + ',' + item.longitude + '&cbp=11,0,0,0,0" target= "_blank">bring me back</a></h6><div class= "memory-description"><h4>"' + item.description + '"</h4></div> <img id= "memory-image" src=' + '//gifrific.com/wp-content/uploads/2014/02/Michelle-Tanner-You-Got-it-Dude-Full-House.gif> ' + '</div>';
   }
 
   function noMemoryInfo() {

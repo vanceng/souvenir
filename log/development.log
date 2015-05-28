@@ -88679,3 +88679,268 @@ Processing by HomeController#index as HTML
   Rendered layouts/_newmemory.html.erb (0.2ms)
   Rendered layouts/_login.html.erb (4.0ms)
 Completed 200 OK in 5895ms (Views: 5893.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-05-28 06:33:27 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  Rendered layouts/_newmemory.html.erb (0.2ms)
+  Rendered layouts/_login.html.erb (3.7ms)
+Completed 200 OK in 7105ms (Views: 7103.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-05-28 06:35:38 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+  Rendered layouts/_newmemory.html.erb (0.2ms)
+  Rendered layouts/_login.html.erb (3.8ms)
+Completed 200 OK in 5840ms (Views: 5838.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/sessions" for 10.0.2.2 at 2015-05-28 06:37:57 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R4L30H/iReODJruglpOAwBVgTqBPjmyTG61zofmPQSY=", "email"=>"ben@benkay.ca", "password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'ben@benkay.ca' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 97ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-05-28 06:37:58 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered home/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_navbar.html.erb (1.0ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (6.9ms)
+  Rendered layouts/_login.html.erb (3.4ms)
+Completed 200 OK in 4852ms (Views: 4849.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/8" for 10.0.2.2 at 2015-05-28 06:39:33 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (327.5ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_navbar.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (7.0ms)
+  Rendered layouts/_login.html.erb (3.4ms)
+Completed 200 OK in 4814ms (Views: 4807.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users/8" for 10.0.2.2 at 2015-05-28 06:39:51 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (115.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_navbar.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (7.8ms)
+  Rendered layouts/_login.html.erb (3.8ms)
+Completed 200 OK in 4310ms (Views: 4306.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/8" for 10.0.2.2 at 2015-05-28 06:39:56 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (146.5ms)
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_navbar.html.erb (3.6ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.2ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (8.2ms)
+  Rendered layouts/_login.html.erb (3.7ms)
+Completed 200 OK in 4190ms (Views: 4184.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/memories?user_id=8" for 10.0.2.2 at 2015-05-28 06:40:12 +0000
+Processing by API::MemoriesController#index as JSON
+  Parameters: {"user_id"=>"8", "subdomain"=>"api", "memory"=>{}}
+  [1m[35mMemory Load (12.4ms)[0m  SELECT "memories".* FROM "memories"  WHERE "memories"."user_id" = '8'
+Completed 200 OK in 228ms (Views: 6.9ms | ActiveRecord: 12.4ms)
+
+
+Started GET "/users/8" for 10.0.2.2 at 2015-05-28 06:42:28 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (123.0ms)
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered layouts/_navbar.html.erb (5.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (8.2ms)
+  Rendered layouts/_login.html.erb (4.3ms)
+Completed 200 OK in 4685ms (Views: 4680.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/memories?user_id=8" for 10.0.2.2 at 2015-05-28 06:42:44 +0000
+Processing by API::MemoriesController#index as JSON
+  Parameters: {"user_id"=>"8", "subdomain"=>"api", "memory"=>{}}
+  [1m[36mMemory Load (1.1ms)[0m  [1mSELECT "memories".* FROM "memories"  WHERE "memories"."user_id" = '8'[0m
+Completed 200 OK in 106ms (Views: 8.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users/8" for 10.0.2.2 at 2015-05-28 06:42:50 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (154.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_navbar.html.erb (3.9ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (9.0ms)
+  Rendered layouts/_login.html.erb (3.9ms)
+Completed 200 OK in 4898ms (Views: 4891.6ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/sessions/8" for 10.0.2.2 at 2015-05-28 06:42:56 +0000
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"R4L30H/iReODJruglpOAwBVgTqBPjmyTG61zofmPQSY=", "id"=>"8"}
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-05-28 06:42:56 +0000
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.2ms)
+  Rendered layouts/_navbar.html.erb (0.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  Rendered layouts/_newmemory.html.erb (0.1ms)
+  Rendered layouts/_login.html.erb (3.0ms)
+Completed 200 OK in 4842ms (Views: 4840.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/memories?user_id=8" for 10.0.2.2 at 2015-05-28 06:43:01 +0000
+Processing by API::MemoriesController#index as JSON
+  Parameters: {"user_id"=>"8", "subdomain"=>"api", "memory"=>{}}
+  [1m[35mMemory Load (0.7ms)[0m  SELECT "memories".* FROM "memories"  WHERE "memories"."user_id" = '8'
+Completed 200 OK in 95ms (Views: 7.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/sessions" for 10.0.2.2 at 2015-05-28 06:43:32 +0000
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"R4L30H/iReODJruglpOAwBVgTqBPjmyTG61zofmPQSY=", "email"=>"ben@benkay.ca", "password"=>"[FILTERED]", "commit"=>"LOG IN"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."email" = 'ben@benkay.ca' LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 104ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-05-28 06:43:33 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered home/index.html.erb within layouts/application (4.5ms)
+  Rendered layouts/_navbar.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (8.4ms)
+  Rendered layouts/_login.html.erb (5.4ms)
+Completed 200 OK in 5037ms (Views: 5035.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/8" for 10.0.2.2 at 2015-05-28 06:43:57 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (152.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_navbar.html.erb (3.0ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (6.8ms)
+  Rendered layouts/_login.html.erb (3.6ms)
+Completed 200 OK in 4541ms (Views: 4536.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users/8" for 10.0.2.2 at 2015-05-28 06:46:31 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (1324.7ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_navbar.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (7.9ms)
+  Rendered layouts/_login.html.erb (3.5ms)
+Completed 200 OK in 6511ms (Views: 6504.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-05-28 06:46:47 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered home/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_navbar.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (7.1ms)
+  Rendered layouts/_login.html.erb (4.5ms)
+Completed 200 OK in 4118ms (Views: 4116.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/8" for 10.0.2.2 at 2015-05-28 06:47:10 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (133.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_navbar.html.erb (3.5ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (6.8ms)
+  Rendered layouts/_login.html.erb (2.9ms)
+Completed 200 OK in 4124ms (Views: 4120.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2015-05-28 06:47:22 +0000
+Processing by HomeController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered home/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_navbar.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.2ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (7.4ms)
+  Rendered layouts/_login.html.erb (3.4ms)
+Completed 200 OK in 3990ms (Views: 3988.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/8" for 10.0.2.2 at 2015-05-28 06:48:11 +0000
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mUser Load (1.1ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  Rendered users/show.html.erb within layouts/application (133.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_navbar.html.erb (3.8ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 8]]
+  [1m[36mCACHE (0.1ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 8]]
+  Rendered layouts/_newmemory.html.erb (6.3ms)
+  Rendered layouts/_login.html.erb (4.3ms)
+Completed 200 OK in 4432ms (Views: 4419.9ms | ActiveRecord: 1.8ms)
